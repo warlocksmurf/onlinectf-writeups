@@ -4,13 +4,13 @@ My boss, Muhammad, sent me this dump file of a memory. He told me that this OS h
 # Solution
 ## Task 1: OS
 Question: What is the OS version?
-Use windbg with this command `!analyze -v`
+Use windbg with this command `!analyze -v`.
 
 ![image](https://github.com/warlocksmurf/ctftime-writeups/assets/121353711/9443cf5f-d9a6-4a67-b592-690b6c68faf5)
 
 ## Task 2: Password
 Question: What is the login password of the OS? 
-use vol2 hashdump plugin to get password hashes, then use crackstation
+use vol2 hashdump plugin to get password hashes, then use crackstation.
 
 ![image](https://github.com/warlocksmurf/ctftime-writeups/assets/121353711/f33b1bf8-a047-4d05-87bd-624dff7b1679)
 
@@ -18,13 +18,13 @@ use vol2 hashdump plugin to get password hashes, then use crackstation
 
 ## Task 3: IP Addr
 Question: What is the IP address of this system?
-Use windbg with this command `du poi(poi(srvnet!SrvAdminIpAddressList))` and keep `spamming du`
+Use windbg with this command `du poi(poi(srvnet!SrvAdminIpAddressList))` and keep `spamming du`.
 
 ![image](https://github.com/warlocksmurf/ctftime-writeups/assets/121353711/744eaa9b-1602-4881-ac81-914355cb82cd)
 
 ## Task 4: Note
 Question: My boss has written something in the text file. Could you please help me find it? 
-Dump the suspicious text file and you can find the encoded flag
+Dump the suspicious text file and you can find the encoded flag.
 
 ![image](https://github.com/warlocksmurf/ctftime-writeups/assets/121353711/de8e9e81-bf8f-4d43-8ede-ef191801f43a)
 
@@ -35,13 +35,13 @@ Dump the suspicious text file and you can find the encoded flag
 ## Task 5: Execution
 Question: My leader, Noman Prodhan, executed something in the cmd of this infected machine. Could you please figure out what he actually executed? 
 I just strings grep KCTF the memory dump and found the flag lol.
-Intended way: Use vol2 consoles plugin and find the executable and command
+Intended way: Use vol2 consoles plugin and find the executable and command.
 
 ![KNIGHT](https://github.com/warlocksmurf/ctftime-writeups/assets/121353711/cede368f-8aa7-4fd5-8595-4ad8ea1d695e)
 
 ## Task 6: Path of the Executable
 Question: What is the path folder of the executable file which execute privious flag? 
-Similarly, use vol2 consoles plugin and find the executable folder location
+Similarly, use vol2 consoles plugin and find the executable folder location.
 
 ![KNIGHT](https://github.com/warlocksmurf/ctftime-writeups/assets/121353711/cede368f-8aa7-4fd5-8595-4ad8ea1d695e)
 
