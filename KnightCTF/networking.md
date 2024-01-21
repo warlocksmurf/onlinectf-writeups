@@ -51,3 +51,17 @@ The flag can be found in the tcp stream previously, however, I could not decode 
 ![image](https://github.com/warlocksmurf/ctftime-writeups/assets/121353711/d9b6a55e-1343-456b-94d3-c27361c9205f)
 
 ![image](https://github.com/warlocksmurf/ctftime-writeups/assets/121353711/8146c13d-5be8-474f-8690-dee9f5cf5fd3)
+
+## Task 8: Confidential
+Question: There's something confidential. Can you find it?
+Extract HTTP objects especially the confidential zip file, within the zip has a .docx file. Analyzing the doc file, we can see the flag being somewhere in the file.
+
+![image](https://github.com/warlocksmurf/ctftime-writeups/assets/121353711/aa3c348f-7d82-41de-8435-52407aca6833)
+
+Pretty straightforward, just resize the image and colorize every text.
+
+![image](https://github.com/warlocksmurf/ctftime-writeups/assets/121353711/3ee02afd-5c3a-49cb-8769-58e115019dd4)
+
+![image](https://github.com/warlocksmurf/ctftime-writeups/assets/121353711/20d110bb-3fd9-415b-9e21-31d89cb31748)
+
+
