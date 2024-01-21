@@ -65,3 +65,23 @@ Pretty straightforward, just resize the image and colorize every text.
 ![image](https://github.com/warlocksmurf/ctftime-writeups/assets/121353711/20d110bb-3fd9-415b-9e21-31d89cb31748)
 
 
+## Task 9: BackDoor
+Question: What is the backdoor file name?
+Analyzing the tcp stream again, we can find a php file being creaated and renamed. So the real backdoor file is the renamed one.
+
+![image](https://github.com/warlocksmurf/ctftime-writeups/assets/121353711/c2c92fcb-f879-4e8c-84a5-ed5330ea8fcf)
+
+## Task 10: Super Admin
+Question: What is the super admin password in the web application?
+
+
+## Task 14: Something Interesting
+Question: What is the super admin password in the web application? 
+I had no clue how to solve this, so I asked other members on Discord and they mentioned a suspicious query in the previous SQL database. 
+I guess it's another guessy challenge, I tried ROT47 and it worked out.
+
+![KNIGHT3](https://github.com/warlocksmurf/ctftime-writeups/assets/121353711/4e921ed3-8a1c-49e2-89d3-9b1e5ef2d350)
+
+![image](https://github.com/warlocksmurf/ctftime-writeups/assets/121353711/27d21b78-6120-4b7b-b12f-8fc685b0b5af)
+
+
