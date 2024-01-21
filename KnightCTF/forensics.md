@@ -48,3 +48,5 @@ Similarly, use vol2 consoles plugin and find the executable folder location
 ## Task 7
 Question: What is the malicious software name? 
 Thanks @Hyper Nova, use vol2 autoruns plugin, a suspicious software can be seen.
+
+![KNIGHT2](https://github.com/warlocksmurf/ctftime-writeups/assets/121353711/6da1fc9a-a7a1-4765-87e4-9a2475ee3750)
