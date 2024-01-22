@@ -1,6 +1,6 @@
 # Solution
-## Task 1: skat’s SD card
-Question: "Do I love being manager? I love my kids. I love real estate. I love ceramics. I love chocolate. I love computers. I love trains."
+## Task 1: Not Just Media
+Question: I downloaded a video from the internet, but I think I got the wrong subtitles. Note: The flag is all lowercase.
 
 We are given a weird .mkv video file and reading the scenario, we have to probably analyze the subtitles. So doing my research online, we can use a tool called `mkvinfo`. Using the tool, we can find there are multiple tracks and subtitles embedded within this video.
 
@@ -16,8 +16,8 @@ In the subtitles file, we can find the subtitles being several chinese letters. 
 
 ![image](https://github.com/warlocksmurf/ctftime-writeups/assets/121353711/edc43207-90cc-4854-9dd1-cb907a6e2b3f)
 
-## Task 2: Not Just Media
-Question: I downloaded a video from the internet, but I think I got the wrong subtitles. Note: The flag is all lowercase.
+## Task 2: skat's SD card
+Question: "Do I love being manager? I love my kids. I love real estate. I love ceramics. I love chocolate. I love computers. I love trains."
 
 We are given a Linux file system, so I opened up Autopsy and started searching for clues. The first thing I always check is the user, and analyzing the hidden files in the user skat, we can find that skat probably downloaded something from GitHub. 
 
