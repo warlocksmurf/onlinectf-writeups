@@ -5,7 +5,7 @@ Recently one of Knight Squad's asset was compromised. We've figured out most but
 ## Task 1: Vicker IP
 Question: What is the victim & attacker ip?
 
-Check `Conversations` in Wireshark.
+Check `Conversations` in Wireshark. The attacker (192.168.1.7) seems to be communicating with our server (192.168.1.8)
 
 ![image](https://github.com/warlocksmurf/ctftime-writeups/assets/121353711/91c03ff3-19df-47e5-aa5c-7d334d68fda7)
 
