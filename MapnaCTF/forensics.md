@@ -51,7 +51,7 @@ Gimp ??? v014
 gimp-image-grid
 ```
 
-While reading on Gimp v014, we stumbled upon this website which mentions that its an XCF file. Since we know its an XCF file now, we can study its ![headers](https://developer.gimp.org/core/standards/xcf/#header)
+While reading on Gimp v014, we stumbled upon this website which mentions that its an XCF file. Since we know its an XCF file now, we can study its [headers](https://developer.gimp.org/core/standards/xcf/#header)
 
 ![image](https://github.com/warlocksmurf/ctftime-writeups/assets/121353711/bee412a3-0ce1-43e6-93e4-bf24d6ecda3b)
 
