@@ -5,14 +5,14 @@ Recently one of Knight Squad's asset was compromised. We've figured out most but
 ## Task 1: Vicker IP
 Question: What is the victim & attacker ip?
 
-Check `Conversations` in Wireshark. The attacker (192.168.1.7) seems to be communicating with our server (192.168.1.8)
+Check `Conversations` in Wireshark. The attacker (192.168.1.7) seems to be communicating with our server (192.168.1.8).
 
 ![image](https://github.com/warlocksmurf/ctftime-writeups/assets/121353711/91c03ff3-19df-47e5-aa5c-7d334d68fda7)
 
 ## Task 2: Basic Enum
 Question: What tool did the attacker use to do basic enumeration of the server? 
 
-Filter victim or attacker's IP address and slowly analyze the packets. We can find Nikto logs in stream 43.
+Filter victim or attacker's IP address and slowly analyze the packets, Nikto logs can be found in tcp stream 43.
 
 ![image](https://github.com/warlocksmurf/ctftime-writeups/assets/121353711/1b55e49a-529f-41f6-b23c-06a6313600a6)
 
@@ -21,7 +21,7 @@ Filter victim or attacker's IP address and slowly analyze the packets. We can fi
 ## Task 3: Vulnerable Service
 Question: What service was vulnerable to the main server?
 
-We can notice suspicious FTP data being sent around. Looking into the stream, we can notice the service being exploited with its version.
+Looking at the packets, suspicious FTP data can be seen being sent. Looking into the ftp stream, it is shown that the ftp service is indeed being exploited.
 
 ![image](https://github.com/warlocksmurf/ctftime-writeups/assets/121353711/1b55e49a-529f-41f6-b23c-06a6313600a6)
 
@@ -30,14 +30,14 @@ We can notice suspicious FTP data being sent around. Looking into the stream, we
 ## Task 4: CVE ID
 Question: What's the CVE id for the vulnerable service?
 
-Just look online on vsFTPd exploits.
+Just research online on vsFTPd exploits.
 
 ![image](https://github.com/warlocksmurf/ctftime-writeups/assets/121353711/5b926f25-98a8-4218-82a5-0daa4d8132c0)
 
 ## Task 5: Famous Tool
 Question: The attacker used a popular tool to gain access of the server. Can you name it?
 
-Researching more on the CVE, we can understand the attacker probably used Metasploit as shown in this video demonstration.
+Researching more on the CVE, several video demonstrations shown that the attacker probably used Metasploit to gain access.
 
 ![image](https://github.com/warlocksmurf/ctftime-writeups/assets/121353711/cfae13c3-1712-4bab-9004-3f1b1bb0c33f)
 
@@ -53,7 +53,7 @@ Similarly, the CVE already explains which port is exploits.
 ## Task 7: Hidden File
 Question: What's the flag of the hidden file?
 
-The flag can be found in the tcp stream previously, however, I could not decode it before the CTF ended. After asking other players on Discord, the true method is twin hex.
+The flag can be found in the tcp stream previously, however, I could not decode it before the CTF ended. After asking other players on Discord, the true method is twin hex (guessy challenge).
 
 ![image](https://github.com/warlocksmurf/ctftime-writeups/assets/121353711/d9b6a55e-1343-456b-94d3-c27361c9205f)
 
@@ -62,7 +62,7 @@ The flag can be found in the tcp stream previously, however, I could not decode 
 ## Task 8: Confidential
 Question: There's something confidential. Can you find it?
 
-Extract HTTP objects especially the confidential zip file, within the zip has a .docx file. Analyzing the doc file, we can see the flag being somewhere in the file.
+Extract every HTTP objects, and within the confidential zip file has a .docx file. Analyzing the doc file, we can see the flag being somewhere in the file.
 
 ![image](https://github.com/warlocksmurf/ctftime-writeups/assets/121353711/aa3c348f-7d82-41de-8435-52407aca6833)
 
