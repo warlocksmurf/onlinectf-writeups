@@ -2,17 +2,88 @@
 ## Task 1: Kitty
 Question: Tetanus is a serious, potentially life-threatening infection that can be transmitted by an animal bite.
 
-We are given a login page, so I analyzed the page source and stumbled across the Javascript file. It says that the credentials are `username` and `password`. Not very secure lol.
+We are given a login page, so I analyzed the page source and stumbled across the Javascript file. It says that the credentials are `username` and `password` (Not very secure lol).
 
 ![image](https://github.com/warlocksmurf/ctftime-writeups/assets/121353711/af4ad084-579e-48c8-9f55-33f4d4cea505)
 
-![image](https://github.com/warlocksmurf/ctftime-writeups/assets/121353711/be718818-c414-4ae2-8746-fe934088144f)
+```
+document.getElementById('login-form').addEventListener('submit', function(event) {
+    event.preventDefault();
 
-Then we are redirected to another page, the dashboard. Same thing I analyzed the page source and found a script field.
+    const username = document.getElementById('username').value;
+    const password = document.getElementById('password').value;
+
+    const data = {
+        "username": username,
+        "password": password
+    };
+
+    fetch('/login', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(data)
+    })
+    .then(response => response.json())
+    .then(data => {
+        // You can handle the response here as needed
+        if (data.message === "Login successful!") {
+            window.location.href = '/dashboard'; // Redirect to the dashboard
+        } else {
+            // Display an error message for invalid login
+            const errorMessage = document.createElement('p');
+            errorMessage.textContent = "Invalid username or password";
+            document.getElementById('login-form').appendChild(errorMessage);
+
+            // Remove the error message after 4 seconds
+            setTimeout(() => {
+                errorMessage.remove();
+            }, 4000);
+        }
+    })
+    .catch(error => {
+        console.error('Error:', error);
+    });
+});
+```
+
+After logging it, we are redirected to another page, the dashboard. Same thing I analyzed the page source and found a script field.
 
 ![image](https://github.com/warlocksmurf/ctftime-writeups/assets/121353711/ee5c4363-b538-4203-a853-5c91cdcbb6b8)
 
-![image](https://github.com/warlocksmurf/ctftime-writeups/assets/121353711/18da3213-798d-4d08-85ad-2ec3b67f328b)
+```
+<script>
+    function addPost(event) {
+        event.preventDefault();
+        const post_in = document.getElementById('post_input').value;
+        
+        if (post_in.startsWith('cat flag.txt')) {
+            fetch('/execute', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/x-www-form-urlencoded'
+                },
+                body: `post_input=${encodeURIComponent(post_in)}`
+            })
+            .then(response => response.text())
+            .then(result => {
+                const contentSection = document.querySelector('.content');
+                const newPost = document.createElement('div');
+                newPost.classList.add('post');
+                newPost.innerHTML = `<h3>Flag Post</h3><p>${result}</p>`;
+                contentSection.appendChild(newPost);
+            });
+        } else {
+            const contentSection = document.querySelector('.content');
+            const newPost = document.createElement('div');
+            newPost.classList.add('post');
+            newPost.innerHTML = `<h3>User Post</h3><p>${post_in}</p>`;
+            contentSection.appendChild(newPost);
+        }
+    }
+</script>
+```
 
 The script mentioned by using sending a command `cat flag.txt` in the input field, we can get the flag.
 
