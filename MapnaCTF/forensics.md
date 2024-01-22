@@ -30,7 +30,7 @@ We are given a text file with multiple fake flags, I guess we have to find the o
 ## Task 3: XXG
 Question: Welcome to the Forensics XXG challenge! Our investigator stumbled upon a mysterious file. Can you uncover the hidden message?
 
-We are given a weird XXG file, analyzing the file's data, we can find several information like `.goutputstream`, `gimp-image-metadata` and some `???` data. 
+For this challenge, I could not solve it before the CTF ended, but I knew it had something to do with hex byte editing so I attempted it after the CTF. We are given a weird file with XXG extension, analyzing the its data, we can find several information like `.goutputstream`, `gimp-image-metadata` and some unknown (`???`) data. 
 GIMP strikes the hardest since most forensic challenges will require us to fix headers and obtain a GIMP-supported image,
 
 ![image](https://github.com/warlocksmurf/ctftime-writeups/assets/121353711/5bcf8c94-d9d7-40e0-987a-ca5cefa2cf39)
