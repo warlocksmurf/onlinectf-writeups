@@ -1,6 +1,6 @@
 # Solution
-## Task 1: Not Just Media
-Question: I downloaded a video from the internet, but I think I got the wrong subtitles. Note: The flag is all lowercase.
+## Task 1: skat’s SD card
+Question: "Do I love being manager? I love my kids. I love real estate. I love ceramics. I love chocolate. I love computers. I love trains."
 
 We are given a weird .mkv video file and reading the scenario, we have to probably analyze the subtitles. So doing my research online, we can use a tool called `mkvinfo`. Using the tool, we can find there are multiple tracks and subtitles embedded within this video.
 
@@ -15,3 +15,31 @@ In the subtitles file, we can find the subtitles being several chinese letters. 
 ![image](https://github.com/warlocksmurf/ctftime-writeups/assets/121353711/97222741-0790-40ca-ab72-29fdc153e6fc)
 
 ![image](https://github.com/warlocksmurf/ctftime-writeups/assets/121353711/edc43207-90cc-4854-9dd1-cb907a6e2b3f)
+
+## Task 2: Not Just Media
+Question: I downloaded a video from the internet, but I think I got the wrong subtitles. Note: The flag is all lowercase.
+
+We are given a Linux file system, so I opened up Autopsy and started searching for clues. The first thing I always check is the user, and analyzing the hidden files in the user skat, we can find that skat probably downloaded something from GitHub. 
+
+![image](https://github.com/warlocksmurf/ctftime-writeups/assets/121353711/84d885e6-6a59-4da9-9b23-ea8432be1a3d)
+
+So I attempted to clone it myself but it requires a secret key. At this point I could not solve it before the CTF ended, but I asked several members on Discord and they told me we can actually extract the public key from the hidden files. Going through the directories, we can find another hidden directory called .ssh and within it the RSA keys.
+
+![image](https://github.com/warlocksmurf/ctftime-writeups/assets/121353711/afd61e8d-2fcd-41a3-9eec-c70a496c7e07)
+
+![image](https://github.com/warlocksmurf/ctftime-writeups/assets/121353711/3ba1a053-9184-4a76-918e-81fb6234ab85)
+
+Since its a private key, we must brute force it using John.
+
+```
+ssh2john id_rsa > id_rsa.hash
+john --wordlist=$rockyou id_rsa.hash
+```
+
+The password  is `password`, that's not very secure skat! So now we have the password, we can start cloning the suspicious files. Before that, we have to also copy both the private key and public key to my `~/.ssh` directory to be used for authorisation. After cloning the repository, we can find numerous text files, README, and a hidden .git directory.
+
+![image](https://github.com/warlocksmurf/ctftime-writeups/assets/121353711/2409371d-4c90-42c0-b7ae-23382d8a6aac)
+
+@seal on Discord told me that we can use a tool called `packfile_reader` to extract and parse .git data to some text files. Navigating to `.git/objects/pack`, we can utilize the tool and just grep the flag from the parsed text files.
+
+![image](https://github.com/warlocksmurf/ctftime-writeups/assets/121353711/184b0aba-837d-4bba-9cb7-71a43a29e691)
