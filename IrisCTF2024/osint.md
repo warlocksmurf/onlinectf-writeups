@@ -114,9 +114,8 @@ print(f"Output saved to {output_file_path}")
 
 Using hashcat, we can crack the hash and obtain the password.
 
-![image](https://github.com/warlocksmurf/ctftime-writeups/assets/121353711/e0647f2a-0078-435b-b7ce-3ab61baf08a4)
-
-
 ```
 hashcat -m 3200 hash output.txt
 ```
+
+![image](https://github.com/warlocksmurf/ctftime-writeups/assets/121353711/e0647f2a-0078-435b-b7ce-3ab61baf08a4)
