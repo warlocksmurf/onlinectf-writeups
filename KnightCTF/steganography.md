@@ -5,9 +5,15 @@ Question: The ocean's beauty is in its clear waters, but its strength lies in it
 We are given an image and a .wav audio file. So I tried analyzing the audio file on Audacity but nothing relevant was found.
 
 So I exiftool the image file to find an encoded message in it. It is probably a hint to find the flag, so I did some research on "deepaudio" and came across a 
-[blog](https://medium.com/@ibnshehu/deepsound-audio-steganography-tool-f7ca0a897576) on audio steganography with "Deep audio". Kinda sus as it represents the challenge and the hint given.
+[blog](https://medium.com/@ibnshehu/deepsound-audio-steganography-tool-f7ca0a897576) on audio steganography with the tool called `DeepSound`, kinda sus as it represents the challenge and the hint given.
 
 ![image](https://github.com/warlocksmurf/ctftime-writeups/assets/121353711/945737b9-c2ab-46ae-bedf-cdfc19851326)
+
+Using the password obtained in exiftool, we can extract a `flag.png` from it. So we binwalk the png and find the flag.
+
+![image](https://github.com/warlocksmurf/ctftime-writeups/assets/121353711/d7142a6e-24df-422f-923c-0a5acee4d089)
+
+![image](https://github.com/warlocksmurf/ctftime-writeups/assets/121353711/5bcb67ad-fc61-4791-99f3-d2a5f868b974)
 
 ## Task 2: Flag Hunt!
 Question: Hunt your way through the challenge and Capture The hidden Flag!!!
