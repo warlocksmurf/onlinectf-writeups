@@ -75,3 +75,45 @@ Question: Recently, Iris’s company had a breach. Her password’s hash has bee
 
 I was not able to solve this question before the CTF ended, however, I did attempt it later on and found it quite interesting. 
 Basically from what the scenario mentioned, we have to find several characters and digits to create our own password dictionary to crack the hash given. Reading the hash, it is probably a `bcrypt $2*$, Blowfish (Unix)`
+
+We can see that she calls her Mothers birthday a 'very important date' so thats one of the details we can extract for our dictionary.
+
+![image](https://github.com/warlocksmurf/ctftime-writeups/assets/121353711/7f97f295-5816-4d78-a549-21bbc59f0ef8)
+
+Here, she mentions her love for Tiramisu, that's going on the dictionary.
+
+![image](https://github.com/warlocksmurf/ctftime-writeups/assets/121353711/c296e532-09d2-49ce-9711-165e22b97b1f)
+
+In this post she talks about an important place in Italy, Portofino.
+
+![image](https://github.com/warlocksmurf/ctftime-writeups/assets/121353711/3025c3fd-ff9c-4090-9731-a36e560f6614)
+
+Using this simple Python script, we created our own dictionary with several words and her mother's birthdate (the admins gave us a hint on this).
+
+```
+from itertools import permutations
+
+words = ["Iris", "Stein", "Elaine", "Tiramisu", "Portofino", "Mimosas", "Italy"]
+word_combinations = permutations(words, 3)
+all_word_combinations = [''.join(combo) for combo in word_combinations]
+
+date_numbers = "8041965"
+num_combinations = permutations(date_numbers, len(date_numbers))
+all_num_combinations = [''.join(combo) for combo in num_combinations]
+
+combined_results = [word_combo + num_combo for word_combo in all_word_combinations for num_combo in all_num_combinations]
+
+# Save the output to a text file
+output_file_path = "output.txt"
+with open(output_file_path, 'w') as output_file:
+    for result in combined_results:
+        output_file.write(result + '\n')
+
+print(f"Output saved to {output_file_path}")
+```
+
+Using hashcat, we can crack the hash and obtain the password.
+
+```
+hashcat -m 3200 hash output.txt
+```
