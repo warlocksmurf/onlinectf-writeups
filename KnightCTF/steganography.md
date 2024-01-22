@@ -1,6 +1,7 @@
 # Solution
 ## Task 1: Oceanic
 Question: The ocean's beauty is in its clear waters, but its strength lies in its dark depths.
+
 We are given an image and a .wav audio file. So I tried analyzing the audio file on Audacity but nothing relevant was found.
 
 So I exiftool the image file to find an encoded message in it. It is probably a hint to find the flag, so I did some research on "deepaudio" and came across a 
@@ -10,6 +11,7 @@ So I exiftool the image file to find an encoded message in it. It is probably a 
 
 ## Task 2: Flag Hunt!
 Question: Hunt your way through the challenge and Capture The hidden Flag!!!
+
 We are given a protected Zip file. Using binwalk, we can find multiple jpg files, text files and a wav file. So, since I have no clue what the password is, I just brute-force it with John.
 
 ```
