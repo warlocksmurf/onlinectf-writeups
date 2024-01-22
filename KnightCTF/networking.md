@@ -21,7 +21,7 @@ Filter victim or attacker's IP address and slowly analyze the packets, Nikto log
 ## Task 3: Vulnerable Service
 Question: What service was vulnerable to the main server?
 
-Looking at the packets, suspicious FTP data can be seen being sent. Looking into the ftp stream, it is shown that the ftp service is indeed being exploited.
+Looking at the packets, suspicious FTP data can be seen being sent. Looking into the ftp stream, it is shown that vFTPd 2.3.4 is indeed being exploited.
 
 ![image](https://github.com/warlocksmurf/ctftime-writeups/assets/121353711/1b55e49a-529f-41f6-b23c-06a6313600a6)
 
@@ -62,7 +62,7 @@ The flag can be found in the tcp stream previously, however, I could not decode 
 ## Task 8: Confidential
 Question: There's something confidential. Can you find it?
 
-Extract the confidential zip file from Wireshark and within the zip, there is a .docx file. Analyzing the doc file, we can see the flag being somewhere in the file.
+Extract the `confidential.zip` file from Wireshark and within the zip, there is a .docx file. Analyzing the doc file, we can see the flag being somewhere in the file.
 
 ![image](https://github.com/warlocksmurf/ctftime-writeups/assets/121353711/aa3c348f-7d82-41de-8435-52407aca6833)
 
@@ -83,11 +83,16 @@ Analyzing the tcp stream again, we can find a php file being created and renamed
 ## Task 10: Super Admin
 Question: What is the super admin password in the web application?
 
-After analyzing everything, I came across the other zip file obtain previous, the `app.zip` file.
+We are given a SQL database called `backup.sql` and the root password hash can be found within it. We also know its MD5 from the `process_login.php`.
+
+![image](https://github.com/warlocksmurf/ctftime-writeups/assets/121353711/2e4dd058-9cd6-4502-a906-6d15a14c52b3)
+
+![image](https://github.com/warlocksmurf/ctftime-writeups/assets/121353711/ba342348-ff67-4fc1-8bb6-34f5db693a25)
 
 ## Task 11: Admin Flag
 Question: Can you find the Admin Flag of the web server?
 
+After analyzing everything, I came across the other zip file obtain previous, the `app.zip` file. 
 Looking through the app files, we stumble across `dashboard.php` where a seemingly encoded cookie can be found.
 
 ![image](https://github.com/warlocksmurf/ctftime-writeups/assets/121353711/be1e7ed8-ed25-4aee-9004-b0b235d5a717)
@@ -95,15 +100,28 @@ Looking through the app files, we stumble across `dashboard.php` where a seeming
 ![image](https://github.com/warlocksmurf/ctftime-writeups/assets/121353711/8739626e-73fe-4e72-81f9-1949d92da42c)
 
 ## Task 12: Vuln
-Question: What was the vulnerability on the edit task page & what parameter was vulnerable? 
+Question: What was the vulnerability on the edit task page & what parameter was vulnerable?
+
+By following HTTP traffic in the pcap, we can see a supposedly SQL injection attack going on. So we can check the vulnerable source code in `process_edit_task.php` and the parameter can be found.
+
+![image](https://github.com/warlocksmurf/ctftime-writeups/assets/121353711/cdffad09-f57d-45ac-9837-5c8abeed49a2)
+
+![image](https://github.com/warlocksmurf/ctftime-writeups/assets/121353711/6629e904-23db-44c0-ad44-a6b338467b91)
+
+So the vulnerablility is SQLi and the parameter is taskId.
 
 ## Task 13: Famous Tool 2
 Question: What tool did the attacker use to identify the vulnerability of edit task page?  
 
+Check the http stream of the attack, the tool used was SQLMap 1.7.10#stable
+
+![image](https://github.com/warlocksmurf/ctftime-writeups/assets/121353711/8e5b15da-88b1-4bef-9797-91de3adf381e)
+
+
 ## Task 14: Something Interesting
 Question: What is the super admin password in the web application? 
 
-I had no clue how to solve this, so I asked other members on Discord and they mentioned a suspicious query in the previous SQL database `backup.sql`. 
+I had no clue how to solve this, so I asked other members on Discord and they mentioned a suspicious query in the previous SQL database.
 I guess it's another guessy challenge, I tried ROT47 and it worked out.
 
 ![KNIGHT3](https://github.com/warlocksmurf/ctftime-writeups/assets/121353711/4e921ed3-8a1c-49e2-89d3-9b1e5ef2d350)
@@ -121,6 +139,11 @@ A suspicious php file for root can be found in `tasks.php`.
 ## Task 16: DB Details
 Question: What is the database username & databasename?
 
+After spending several minutes on looking at the app files, I actually found the username and password in the previous vFTPd stream.
+
+![image](https://github.com/warlocksmurf/ctftime-writeups/assets/121353711/826fe007-ee12-403a-a4a3-71d97cf83394)
+
+So the username is actually db_user not root, and the password is kctf2024 as seen in `db.php`.
 
 ## Task 17: API Key
 Question: What's the API Key?
