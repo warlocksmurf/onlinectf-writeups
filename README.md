@@ -4,8 +4,8 @@
 
 ## 2024
 
-* [KnightCTF](https://github.com/warlocksmurf/ctftime-writeups/blob/main/KnightCTF)
+* [KnightCTF](https://github.com/warlocksmurf/ctftime-writeups/blob/main/KnightCTF24)
 
-* [MapnaCTF](https://github.com/warlocksmurf/ctftime-writeups/blob/main/MapnaCTF)
+* [MapnaCTF](https://github.com/warlocksmurf/ctftime-writeups/blob/main/MapnaCTF24)
 
-* [IrisCTF](https://github.com/warlocksmurf/ctftime-writeups/blob/main/IrisCTF)
+* [IrisCTF](https://github.com/warlocksmurf/ctftime-writeups/blob/main/IrisCTF24)
