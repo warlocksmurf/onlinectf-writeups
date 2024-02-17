@@ -4,7 +4,7 @@
 
 ## 2024
 
-* [BITSCTF](https://github.com/warlocksmurf/ctftime-writeups/blob/main/IrisCTF24)
+* [BITSCTF](https://github.com/warlocksmurf/ctftime-writeups/blob/main/BITSCTF24)
 
 * [KnightCTF](https://github.com/warlocksmurf/ctftime-writeups/blob/main/KnightCTF24)
 
