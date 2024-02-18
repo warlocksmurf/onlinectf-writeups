@@ -2,7 +2,7 @@
 ## Task 1: Kitty
 Question: Tetanus is a serious, potentially life-threatening infection that can be transmitted by an animal bite.
 
-We are given a login page, so I analyzed the page source and stumbled across the Javascript file. It says that the credentials are `username` and `password` (Not very secure lol).
+We are given a login page, so I analyzed the page source and stumbled across the Javascript file. It says that the credentials are 'username' and 'password' (Not very secure).
 
 ![image](https://github.com/warlocksmurf/ctftime-writeups/assets/121353711/af4ad084-579e-48c8-9f55-33f4d4cea505)
 
@@ -97,7 +97,5 @@ We are given an image of Levi in the website, nothing else. So by reading the qu
 ![image](https://github.com/warlocksmurf/ctftime-writeups/assets/121353711/28351273-09c4-48a0-8fc3-505d41b94200)
 
 ![image](https://github.com/warlocksmurf/ctftime-writeups/assets/121353711/b66db858-ec5d-4857-970b-d24022204a9d)
-
-We can see that it allows this URL, so we access it and get the flag.
 
 ![image](https://github.com/warlocksmurf/ctftime-writeups/assets/121353711/0dcdc787-202c-4a7e-b4bf-251d59b618ef)
