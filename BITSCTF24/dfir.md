@@ -1,6 +1,6 @@
 # Solution
 ## Task 1: Intro to DFIR
-Scenario: DFIR or Digital Forensics and Incident Response is a field within cybersecurity that focuses on the identification, investigation, and remediation of cyberattacks. Here are the types of analysis you can expect throughout these sequence of challenges!
+Question: DFIR or Digital Forensics and Incident Response is a field within cybersecurity that focuses on the identification, investigation, and remediation of cyberattacks. Here are the types of analysis you can expect throughout these sequence of challenges!
 
 Flag: `BITSCTF{DFIR_r0ck55}`
 
@@ -9,7 +9,7 @@ In this DFIR challenge, the authors provided us a memory dump, AD1 image and a p
 ![image](https://github.com/warlocksmurf/onlinectf-writeups/assets/121353711/c3d210be-66ba-40da-9b61-8631d6f9f000)
 
 ## Task 2: Access Granted!
-Scenario: First things first. MogamBro is so dumb that he might be using the same set of passwords everywhere, so lets try cracking his PC's password for some luck.
+Question: First things first. MogamBro is so dumb that he might be using the same set of passwords everywhere, so lets try cracking his PC's password for some luck.
 
 Flag: `BITSCTF{adolfhitlerrulesallthepeople}`
 
@@ -20,7 +20,7 @@ I started the search with the memory dump first. Since we are looking for a pass
 ![image](https://github.com/warlocksmurf/onlinectf-writeups/assets/121353711/bab07dbf-c5f8-4cbd-bc55-6af1bd2b7e63)
 
 ## Task 3: 0.69 Day
-Scenario: MogamBro was using some really old piece of software for his daily tasks. What a noob! Doesn't he know that using these deprecated versions of the same leaves him vulnerable towards various attacks! Sure he faced the consequences through those spam mails. Can you figure out the CVE of the exploit that the attacker used to gain access to MogamBro's machine & play around with his stuff.
+Question: MogamBro was using some really old piece of software for his daily tasks. What a noob! Doesn't he know that using these deprecated versions of the same leaves him vulnerable towards various attacks! Sure he faced the consequences through those spam mails. Can you figure out the CVE of the exploit that the attacker used to gain access to MogamBro's machine & play around with his stuff.
 
 Flag: `BITSCTF{CVE-2023-38831}`
 
@@ -36,7 +36,7 @@ While researching on this specific zip attack, I stumbled about this [blog](http
 that talks about a WinRAR zero-day last year. Then I remembered that the user had WinRAR downloaded in his PC, suggesting that WinRAR was the vulnerable software. Hence, the CVE on this zip attack can be found in the blog.
 
 ## Task 4: I'm wired in
-Scenario: MogamBro got scared after knowing that his PC has been hacked and tried to type a SOS message to his friend through his 'keyboard'. Can you find the contents of that message, obviously the attacker was logging him!
+Question: MogamBro got scared after knowing that his PC has been hacked and tried to type a SOS message to his friend through his 'keyboard'. Can you find the contents of that message, obviously the attacker was logging him!
 
 Flag: `BITSCTF{BITSCTF{I_7h1nk_th3y_4Re_k3yl0991ng_ME!}`
 
@@ -68,7 +68,7 @@ cat hiddata.csv | cut -d "," -f 7 | cut -d "\"" -f 2 | grep -vE "HID Data" > hex
 However, the flag seems to be incorrect because there is an extra '-' placed into the flag. Remove it to get the real flag.
 
 ## Task 5: Bypassing Transport Layer
-Scenario: The exploit not only manipulated MogamBro's secret but also tried to establish an external TCP connection to gain further access to the machine. But I don't really think he was able to do so. Can you figure out where the exploit was trying to reach to?
+Question: The exploit not only manipulated MogamBro's secret but also tried to establish an external TCP connection to gain further access to the machine. But I don't really think he was able to do so. Can you figure out where the exploit was trying to reach to?
 
 Flag: `BITSCTF{5te4l1ng_pr1v47e_key5_ez:)}`
 
@@ -99,7 +99,7 @@ Edit: After awhile, the authors gave a hint on finding the flag where we should 
 ![image](https://github.com/warlocksmurf/onlinectf-writeups/assets/121353711/814c5232-8fba-4c70-ba0b-98ba97b92e00)
 
 ## Task 6: Lottery
-Scenario: Now that you know the CVE, figure out how the attacker crafted the payload & executed it to compromise the 'secret'.
+Question: Now that you know the CVE, figure out how the attacker crafted the payload & executed it to compromise the 'secret'.
 
 Flag: `BITSCTF{1_r3c3ived_7h3_b0mbz}`
 
@@ -169,7 +169,7 @@ Finally, after having the key and IV, we can decrypt the 'secret' file and obtai
 ![image](https://github.com/warlocksmurf/onlinectf-writeups/assets/121353711/56cf3686-511f-4c4f-bb58-b956f603ba5b)
 
 ## Task 7: MogamBro's guilty pleasure
-Scenario: MogamBro was spammed with a lot of emails, he was able to evade some but fell for some of them due to his greed. Can you analyze the emails & figure out how he got scammed, not once but twice!
+Question: MogamBro was spammed with a lot of emails, he was able to evade some but fell for some of them due to his greed. Can you analyze the emails & figure out how he got scammed, not once but twice!
 
 Flag: `BITSCTF{sp4m_2_ph1sh_U}`
 
