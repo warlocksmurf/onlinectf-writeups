@@ -1,7 +1,8 @@
 # Solution
 ## Task 1: Where's skat?
-Question: While traveling over the holidays, I was doing some casual wardriving (as I often do). Can you use my capture to find where I went? 
-Note: the flag is irisctf{the_location}, where the_location is the full name of my destination location, not the street address.
+While traveling over the holidays, I was doing some casual wardriving (as I often do). Can you use my capture to find where I went? Note: the flag is irisctf{the_location}, where the_location is the full name of my destination location, not the street address. For example, irisctf{Washington_Monument}. Note that the flag is not case sensitive.
+
+Flag: `irisctf{los_angeles_union_station}`
 
 We are given a pcap file, and since we are asked where they went, (the destination specifically) we can go to the end of the PCAP and look around. 
 We can notice them communicating with nearby routers and it seems to lead to the same place everytime.
@@ -15,7 +16,9 @@ From what I understand, it seems that skat is being in some station as it shows 
 ## Task 2: skat's Network History
 Question: "I love cats." Note: this challenge is a continuation to Forensics/skat's SD Card. You are dealing with the same scenario. skats-sd-card.tar.gz is the same file from that challenge (SHA-1: 4cd743d125b5d27c1b284f89e299422af1c37ffc).
 
-For this challenge, I could not solve it before the CTF ended, but @Seal thought me how so thanks! We are given a pcap file again and some encrypted 802.11 packets. Poking around the skat's directory in the SD card from the Forensics challenge, the `Bookshelf` folder has a PDF manual for setting up a Raspberry Pi. So checking on the `/etc/NetworkManager/system-connection/skatnet.nmconnection` file, we can see it contains a WiFi password.
+Flag: `irisctf{i_sp3nd_m0st_of_my_t1me_0n_th3_1nt3rnet_w4tch1ng_c4t_v1d30s}`
+
+For this challenge, I could not solve it before the CTF ended, but @seal taught me how so thanks! We are given a pcap file again and some encrypted 802.11 packets. Poking around the skat's directory in the SD card from the Forensics challenge, the Bookshelf folder has a PDF manual for setting up a Raspberry Pi. So checking on the `/etc/NetworkManager/system-connection/skatnet.nmconnection` file, we can see it contains a WiFi password.
 
 ```
 [connection]
@@ -43,7 +46,7 @@ method=auto
 [proxy]
 ```
 
-Then we can decrypt the packets by navigating to my Wireshark preferences, then Protocols > IEEE 802.11 and Edit the Decryption keys to add `agdifbe7dv1iruf7ei2v5op` as a wpa-pwd.
+With the PSK, we can decrypt the packets using Wireshark by navigating to `Preferences > Protocols > IEEE 802.11 > Edit` to add the PSK as the wpa-pwd.
 
 ![image](https://github.com/warlocksmurf/ctftime-writeups/assets/121353711/d104bc85-6755-43d1-bf31-748e8f9387b9)
 
