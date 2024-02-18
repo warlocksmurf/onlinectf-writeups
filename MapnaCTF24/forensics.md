@@ -2,8 +2,9 @@
 ## Task 1: PLC I 🤖
 Question: The MAPNA CERT team has identified an intrusion into the plant's PLCs, discovering a covert message transferred to the PLC. Can you uncover this secret message?
 
-We are given a pcap file about PLC TCP packets. When analyzing the packets, we can notice some Ethernet packets have trailer paddings in them. This seems suspicious and after going through all the packets, the flag is obtained from their trailer.
-Another method is to just strings the pcap.
+Flag: `MAPNA{y0U_sHOuLd_4lW4yS__CaR3__PaADd1n9!!}`
+
+We are given a pcap file about PLC TCP packets. When analyzing the packets, we can notice some Ethernet packets have trailer paddings in them. This seems suspicious and after going through all the packets, the flag is obtained from their trailer. Another method is to just strings the pcap.
 
 ![image](https://github.com/warlocksmurf/ctftime-writeups/assets/121353711/212df183-f0b9-4da9-b918-f6daae977308)
 
@@ -16,10 +17,10 @@ Another method is to just strings the pcap.
 6: d1n9!!}
 ```
 
-![image](https://github.com/warlocksmurf/ctftime-writeups/assets/121353711/3cdd3055-b584-4a62-b076-923b5e8114ab)
-
 ## Task 2: Tampered
 Question: Our MAPNA flags repository was compromised, with attackers introducing one invalid flag. Can you identify the counterfeit flag?
+
+Flag: `MAPNA{Tx,D51otN\\eUf7qQ7>ToSYQ\\;5P6jTIHH#6TL+uv}`
 
 We are given a text file with multiple fake flags, I guess we have to find the outlier from it. One easy way is just to analyze them slowly and find the outlier (the memes were funny @Stoffe).
 
@@ -30,7 +31,9 @@ We are given a text file with multiple fake flags, I guess we have to find the o
 ## Task 3: XXG
 Question: Welcome to the Forensics XXG challenge! Our investigator stumbled upon a mysterious file. Can you uncover the hidden message?
 
-For this challenge, I could not solve it before the CTF ended, but I knew it had something to do with hex byte editing so I attempted it after the CTF. We are given a weird file with XXG extension, analyzing the its data, we can find several information like `.goutputstream`, `gimp-image-metadata` and some unknown (`???`) data. 
+Flag: `MAPNA{F2FS_&_BFS_f1L3_5Ys73Ms_4rE_Nic3?!}`
+
+For this challenge, I could not solve it before the CTF ended, but I knew it had something to do with hex byte editing so I attempted it after the CTF. We are given a weird file with XXG extension, analyzing the its data, we can find several information like .goutputstream, gimp-image-metadata and some unknown (???) data. 
 GIMP strikes the hardest since most forensic challenges will require us to fix headers and obtain a GIMP-supported image,
 
 ![image](https://github.com/warlocksmurf/ctftime-writeups/assets/121353711/5bcf8c94-d9d7-40e0-987a-ca5cefa2cf39)
