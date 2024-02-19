@@ -4,7 +4,12 @@ Question: Check out my youtube video
 
 Flag: `bronco{1n_17_f0r_7h3_10n6_h4ul}`
 
-I could not solve this challenge before the CTF ended, however I tried it again the next day and finally understood the challenge. We are given a 1 hour Youtube video with characters of the flag coming up in random frames throughout, however, some of the frames were too quick for the human eye. One way is to watch the whole video in fast playbacks like 8x or 16x. Another way by @Krauq is to just download the video and extract each frames and removing the blank ones with a tool like [ffmpeg](https://ffmpeg.org/).
+I could not solve this challenge before the CTF ended, however I tried it again the next day and finally understood the challenge. We are given a 1 hour Youtube video with characters of the flag coming up in random frames throughout, however, some of the frames were too quick for the human eye. One way is to watch the whole video in fast playbacks like 8x or 16x. Another way by @Krauq is to just download the video and extract each frames with a tool like [ffmpeg](https://ffmpeg.org/).
+
+```
+ffmpeg -i Flag\ Vido.mp4 -vf "fps=1" output_%04d.png  
+find . -type f -size 284c -exec rm {} +
+```
 
 ## Task 2: Wario Party
 Question: Who is the true hero of the Mario Party games you might ask? Look inward and you might find it at the intersection of Mario's color and the number of brothers.
