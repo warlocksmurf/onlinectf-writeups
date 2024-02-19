@@ -56,13 +56,13 @@ Question: This transmission supposedly contains a secret flag, but I can't decod
 
 Flag: `bronco{y0u_mu57_h4v3_4m4z1ng_h34r1ng}`
 
-We are given a wav audio file in this challenge, which also means audio steganography. Using [Sonic Visualizer](https://www.sonicvisualiser.org/) on Windows, a spectrogram layer can be added and a weird encoded message can be found. It seems to either be digital waves or morse code. But after analyzing it, it was definitely digital waves where down=0 and up=1. With 0s and 1s again, it is yet another binary type puzzle.
+We are given a wav audio file in this challenge, which also means audio steganography. Using [Sonic Visualizer](https://www.sonicvisualiser.org/) on Windows, a spectrogram layer can be added and a weird encoded message can be found. It seems to either be digital waves or morse code.
 
 ![image](https://github.com/warlocksmurf/onlinectf-writeups/assets/121353711/a52eb414-979a-491b-b242-9713d6c44af0)
 
-![image](https://github.com/warlocksmurf/onlinectf-writeups/assets/121353711/df2db86b-0680-40f5-98c8-cd18e4405207)
+But after analyzing it, it was definitely digital waves where down=0 and up=1. With 0s and 1s again, it is yet another binary type puzzle. So I manually inserted each bit and decoded them using [cryptii](https://cryptii.com/pipes/binary-decoder) (had to repeat 6 times rip my eyes) and finally got the flag.
 
-So I manually decoded them using [cryptii](https://cryptii.com/pipes/binary-decoder) (had to repeat 6 times rip my eyes) and finally got the flag.
+![image](https://github.com/warlocksmurf/onlinectf-writeups/assets/121353711/df2db86b-0680-40f5-98c8-cd18e4405207)
 
 ## Task 5: LAN Party
 Question: My friend is SO MEAN! He changed my password on my home router and hid it in this Minecraft world. He even unmined the chunk I dug out...what a jerk. Ugh, now I am just here at the top of the world rather than at bedrock mining diamonds.
