@@ -59,7 +59,7 @@ We are given a wav audio file in this challenge, which also means audio steganog
 
 ![image](https://github.com/warlocksmurf/onlinectf-writeups/assets/121353711/a52eb414-979a-491b-b242-9713d6c44af0)
 
-<img width="631" alt="2_28" src="https://github.com/warlocksmurf/onlinectf-writeups/assets/121353711/c460393c-f243-41b5-842c-8b21dedf9186">
+![image](https://github.com/warlocksmurf/onlinectf-writeups/assets/121353711/df2db86b-0680-40f5-98c8-cd18e4405207)
 
 So I manually decoded them using [cryptii](https://cryptii.com/pipes/binary-decoder) (had to repeat 6 times rip my eyes) and finally got the flag.
 
