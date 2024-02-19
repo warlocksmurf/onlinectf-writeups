@@ -27,5 +27,12 @@ Question: I hate electrical engineering
 
 Flag: `bronco{rEsi5t_ev1L}`
 
-We are given a pdf with many 6-band resistors. After awhile, I stumbled upon this [tool](https://www.geocachingtoolbox.com/index.php?lang=en&page=resistorCode) that helps calculate the Ω values for each resistor. Going through each column, we can get the flag by converting the Ω values to Ascii.
+We are given a pdf with many 6-band resistors. After awhile, I stumbled upon this [tool](https://www.geocachingtoolbox.com/index.php?lang=en&page=resistorCode) that helps calculate the Ω values for each resistor.
 
+![image](https://github.com/warlocksmurf/onlinectf-writeups/assets/121353711/cd7dade1-ca4a-43f1-b13c-8a935d1c7c23)
+
+![image](https://github.com/warlocksmurf/onlinectf-writeups/assets/121353711/fa533ead-7154-414b-9340-de2b6731104c)
+
+Noticing that the Ω values seems to represent certain numbers, I tried every resistor's Ω value on CyberChef and it succesfully decoded the flag. Thanks @eror__404 for the sanity check.
+
+![image](https://github.com/warlocksmurf/onlinectf-writeups/assets/121353711/d28d9846-1d73-4eec-9a20-0858d0c53b51)
