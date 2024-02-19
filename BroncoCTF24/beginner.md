@@ -7,7 +7,7 @@ A;;apfkgij gj;ukd ar ut ghur war a Qwfpgj efjbyaps yk a Cyifmae uk;lg rchfmf mae
 
 Flag: `bronco{qwerty_vs_c0lem@k}`
 
-At first I was stuck at this for quite awhile, but after reading the description carefully, it could suggest that this was a different keyboard layout. Using dcode, I noticed that the encoded text was actually [Colemak](https://colemak.com/) which I have never heard before.
+At first I was stuck at this for quite awhile, but after reading the description carefully, it could suggest that this was a different keyboard layout. Using dcode, I noticed that the encoded text was actually [Colemak](https://colemak.com/) which I have never heard of before.
 
 ![image](https://github.com/warlocksmurf/onlinectf-writeups/assets/121353711/852ce8c4-14e5-46a1-a2d1-d5a7c6d8f3b6)
 
