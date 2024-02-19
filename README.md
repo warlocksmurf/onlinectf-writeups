@@ -4,7 +4,7 @@
 
 ## 2024
 
-* [BroncoCTF](https://github.com/warlocksmurf/ctftime-writeups/blob/main/BITSCTF24)
+* [BroncoCTF](https://github.com/warlocksmurf/ctftime-writeups/blob/main/BroncoCTF24)
 
 * [BITSCTF](https://github.com/warlocksmurf/ctftime-writeups/blob/main/BITSCTF24)
 
