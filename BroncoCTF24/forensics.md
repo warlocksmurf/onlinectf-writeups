@@ -17,9 +17,10 @@ Question: Who is the true hero of the Mario Party games you might ask? Look inwa
 Flag: `bronco{b0ws3r_g0t_th4t_dumpy}`
 
 We are given an image of Super Mario Bros poster that has a huge file size which suggest steganography. Reading the description carefully, it mentions something about Mario's color and the number of brothers.
-
-Mario's color = Red <br>
+```
+Mario's color = Red
 Number of brothers = 2
+```
 
 Using this information, it seems that a LSB steganography is performed. To ensure this logic is correct, analyzing the image shows that there data encoded in Red 2. So we can use online tools like [StegOnline](https://georgeom.net/StegOnline/upload) to extract the hidden data embedded within the image.
 
@@ -27,7 +28,7 @@ Using this information, it seems that a LSB steganography is performed. To ensur
 
 ![image](https://github.com/warlocksmurf/onlinectf-writeups/assets/121353711/a5e3c450-eb85-4557-9fd9-0863c8def179)
 
-The extracted data seems to be an image of another puzzle with Wario and Waluigi. Analyzing the image, it seems that it is another bits puzzle where Wario = 0 and Waluigi = 1. Using CyberChef, the flag can be obtained.
+The extracted data seems to be an image of another puzzle with Wario and Waluigi. Analyzing the image, it seems that it is another bits puzzle where Wario=0 and Waluigi=1. Using CyberChef, the flag can be obtained.
 
 <p align="center">
   <img src="https://github.com/warlocksmurf/onlinectf-writeups/assets/121353711/cddad5a1-3e3a-405a-92b5-c1dc19c0b1a9" alt="RealHeroOfMarioDecoded" width="30%" height="70%"/>
