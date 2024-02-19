@@ -49,6 +49,10 @@ We are back at Task 2 [website](https://blue.web.broncoctf.xyz/) again and this 
 
 ![image](https://github.com/warlocksmurf/onlinectf-writeups/assets/121353711/fb5e55fb-94e1-4748-b6b6-1998a3eaae5f)
 
-At this point I had no clue what to do next, but after asking for hints, it seems I have to perform steganography on it (this should be a forensic challenge, not web). Since the question mentioned Blue herring, I thought of LSB steganography again. But after going through every color bit plane, it did not output any interesting results. Hence I went ahead and tried zsteg and the flag can be located on Blue 8 LSB.
+At this point I had no clue what to do next, but after asking for hints, it seems I have to perform steganography on it (this should be a forensic challenge, not web). Since the question mentioned Blue herring, I thought of LSB steganography again. Hence I went ahead and tried zsteg and the flag can be located on Blue 8 LSB.
 
 ![image](https://github.com/warlocksmurf/onlinectf-writeups/assets/121353711/a99abbf8-8ef8-44a6-abc2-309c48ef2df0)
+
+Another method from @knight_ on Discord is to just select every Blue bit MSB on [StegOnline](https://georgeom.net/StegOnline/extract) and the flag can be found.
+
+![image](https://github.com/warlocksmurf/onlinectf-writeups/assets/121353711/9c755f4f-1f5d-4cf8-a32f-ca7aae2d2dee)
