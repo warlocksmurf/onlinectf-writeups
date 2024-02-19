@@ -24,7 +24,9 @@ Using this information, it seems that a LSB steganography is performed. To ensur
 
 The extracted data seems to be an image of another puzzle with Wario and Waluigi. Analyzing the image, it seems that it is another bits puzzle where Wario = 0 and Waluigi = 1. Using CyberChef, the flag can be obtained.
 
-![RealHeroOfMario](https://github.com/warlocksmurf/onlinectf-writeups/assets/121353711/cddad5a1-3e3a-405a-92b5-c1dc19c0b1a9)
+<p align="center">
+  <img src="https://github.com/warlocksmurf/onlinectf-writeups/assets/121353711/cddad5a1-3e3a-405a-92b5-c1dc19c0b1a9" alt="RealHeroOfMarioDecoded" width="30%" height="70%"/>
+</p>
 
 ## Task 3: Boom
 Question: With all these talks of arbitration, things are tense here around the office. I feel like people are going to explode at any moment. I gotta watch where I step before I accidentally bring something up and uncover something I didn't want to.
