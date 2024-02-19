@@ -5,11 +5,7 @@
 ## 2024
 
 * [BroncoCTF](https://github.com/warlocksmurf/ctftime-writeups/blob/main/BroncoCTF24)
-
 * [BITSCTF](https://github.com/warlocksmurf/ctftime-writeups/blob/main/BITSCTF24)
-
 * [KnightCTF](https://github.com/warlocksmurf/ctftime-writeups/blob/main/KnightCTF24)
-
 * [MapnaCTF](https://github.com/warlocksmurf/ctftime-writeups/blob/main/MapnaCTF24)
-
 * [IrisCTF](https://github.com/warlocksmurf/ctftime-writeups/blob/main/IrisCTF24)
