@@ -31,6 +31,6 @@ We were given an image file of a sleeping dinosaur, just use some generic stegan
 
 ![image](https://github.com/warlocksmurf/onlinectf-writeups/assets/121353711/b55a0b13-d859-4cdc-9c56-6d509abe960f)
 
-Since we know pesxas should be bronco since the flag requires it, it suggests a mono-alphabetic cipher. I used a good online substitution tool called [quipquip](https://quipqiup.com/) and got the flag.
+Since we know pesxas should be bronco, it suggests a mono-alphabetic cipher. I used a good online substitution tool called [quipquip](https://quipqiup.com/) and got the flag.
 
 ![image](https://github.com/warlocksmurf/onlinectf-writeups/assets/121353711/0a2583be-ea62-494b-955a-385631dc6e17)
