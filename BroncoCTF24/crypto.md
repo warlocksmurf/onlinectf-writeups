@@ -27,5 +27,5 @@ Question: I hate electrical engineering
 
 Flag: `bronco{rEsi5t_ev1L}`
 
-We are given a pdf with many 6-band resistors. After awhile, I stumbled upon this [tool](https://www.geocachingtoolbox.com/index.php?lang=en&page=resistorCode) that can help me comverting the color code. Going through each column, we can get the flag by converting the Ω values to Ascii.
+We are given a pdf with many 6-band resistors. After awhile, I stumbled upon this [tool](https://www.geocachingtoolbox.com/index.php?lang=en&page=resistorCode) that helps calculate the Ω values for each resistor. Going through each column, we can get the flag by converting the Ω values to Ascii.
 
