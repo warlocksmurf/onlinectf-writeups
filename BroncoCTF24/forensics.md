@@ -28,11 +28,13 @@ Using this information, it seems that a LSB steganography is performed. To ensur
 
 ![image](https://github.com/warlocksmurf/onlinectf-writeups/assets/121353711/a5e3c450-eb85-4557-9fd9-0863c8def179)
 
-The extracted data seems to be an image of another puzzle with Wario and Waluigi. Analyzing the image, it seems that it is another binary type puzzle where Wario=0 and Waluigi=1. Using CyberChef, the flag can be obtained.
+The extracted data seems to be an image of another puzzle with Wario and Waluigi. Analyzing the image, it seems that it is another binary type puzzle where Wario=0 and Waluigi=1. Converting the binary to Ascii, the flag can be obtained.
 
 <p align="center">
   <img src="https://github.com/warlocksmurf/onlinectf-writeups/assets/121353711/cddad5a1-3e3a-405a-92b5-c1dc19c0b1a9" alt="RealHeroOfMarioDecoded" width="30%" height="70%"/>
 </p>
+
+![image](https://github.com/warlocksmurf/onlinectf-writeups/assets/121353711/77df5715-b32f-4f8f-baac-1fa1b2994e25)
 
 ## Task 3: Boom
 Question: With all these talks of arbitration, things are tense here around the office. I feel like people are going to explode at any moment. I gotta watch where I step before I accidentally bring something up and uncover something I didn't want to.
@@ -63,6 +65,8 @@ We are given a wav audio file in this challenge, which also means audio steganog
 But after analyzing it, it was definitely digital waves where down=0 and up=1. With 0s and 1s again, it is yet another binary type puzzle. So I manually inserted each bit and decoded them using [cryptii](https://cryptii.com/pipes/binary-decoder) (had to repeat 6 times rip my eyes) and finally got the flag.
 
 ![image](https://github.com/warlocksmurf/onlinectf-writeups/assets/121353711/df2db86b-0680-40f5-98c8-cd18e4405207)
+
+![image](https://github.com/warlocksmurf/onlinectf-writeups/assets/121353711/034c26ea-a41e-46b9-b2aa-7dcd6978a1f7)
 
 ## Task 5: LAN Party
 Question: My friend is SO MEAN! He changed my password on my home router and hid it in this Minecraft world. He even unmined the chunk I dug out...what a jerk. Ugh, now I am just here at the top of the world rather than at bedrock mining diamonds.
