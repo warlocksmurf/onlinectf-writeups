@@ -1,5 +1,3 @@
-# Online CTF Write-ups
-
 ![1680103178404](https://github.com/warlocksmurf/onlinectf-writeups/assets/121353711/d0d0a0c8-fe72-4c06-bbda-dde8236b7581)
 
 ## 2024
