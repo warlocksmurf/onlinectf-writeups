@@ -53,6 +53,6 @@ At this point I had no clue what to do next, but after asking for hints, it seem
 
 ![image](https://github.com/warlocksmurf/onlinectf-writeups/assets/121353711/a99abbf8-8ef8-44a6-abc2-309c48ef2df0)
 
-Another method from @knight_ on Discord is to just select every Blue bit MSB on [StegOnline](https://georgeom.net/StegOnline/extract) and the flag can be found.
+However, the intended method was to just select every Blue bit MSB on [StegOnline](https://georgeom.net/StegOnline/extract) and the flag can be obtained.
 
 ![image](https://github.com/warlocksmurf/onlinectf-writeups/assets/121353711/9c755f4f-1f5d-4cf8-a32f-ca7aae2d2dee)
