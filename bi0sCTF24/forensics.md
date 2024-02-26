@@ -8,7 +8,7 @@ Question: What is the serial number of the sandisk usb that he plugged into the 
 
 Flag: `verboten{4C530001090312109353&0:2024-02-16-12-01-57}`
 
-I remember learning about USB registries from other CTFs, so I did some research on what registries I should look out for and this ![blog](https://www.cybrary.it/blog/usb-forensics-find-the-history-of-every-connected-usb-device-on-your-computer) mentioned that USB data should be in `HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Enum\USBSTOR`.
+I remember learning about USB registries from other CTFs, so I did some research on what registries I should look out for and this ![blog](https://www.cybrary.it/blog/usb-forensics-find-the-history-of-every-connected-usb-device-on-your-computer) mentioned that the serial ID of the USB and the timestamp of when it was plugged into the system can be located in `HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Enum\USBSTOR`.
 
 ![image](https://github.com/warlocksmurf/onlinectf-writeups/assets/121353711/41d73b7c-8951-4765-9e36-862131dc8a52)
 
