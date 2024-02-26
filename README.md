@@ -2,6 +2,10 @@
 
 ## 2024
 
+* [GCCCTF](https://github.com/warlocksmurf/ctftime-writeups/blob/main/GCCCTF24)
+* [osu!gamingCTF](https://github.com/warlocksmurf/ctftime-writeups/blob/main/osu!gamingCTF24)
+* [VishwaCTF](https://github.com/warlocksmurf/ctftime-writeups/blob/main/VishwaCTF24)
+* [bi0sCTF](https://github.com/warlocksmurf/ctftime-writeups/blob/main/bi0sCTF24)
 * [BroncoCTF](https://github.com/warlocksmurf/ctftime-writeups/blob/main/BroncoCTF24)
 * [BITSCTF](https://github.com/warlocksmurf/ctftime-writeups/blob/main/BITSCTF24)
 * [KnightCTF](https://github.com/warlocksmurf/ctftime-writeups/blob/main/KnightCTF24)
