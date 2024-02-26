@@ -1,7 +1,7 @@
 # Scenario: BITSCTF (Memory & Network Analysis)
 DFIR or Digital Forensics and Incident Response is a field within cybersecurity that focuses on the identification, investigation, and remediation of cyberattacks. Here are the types of analysis you can expect throughout these sequence of challenges!
 
-We are given a memory dump, AD1 image file and PCAP file for our investigation. So, tools like Volatility, FTK Imager and Wireshark will be required.
+We are given a memory dump, AD1 image file and PCAP file for our investigation, which can be analyzed using Volatility, FTK Imager and Wireshark respectively.
 
 ![image](https://github.com/warlocksmurf/onlinectf-writeups/assets/121353711/c3d210be-66ba-40da-9b61-8631d6f9f000)
 
