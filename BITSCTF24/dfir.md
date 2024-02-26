@@ -1,14 +1,16 @@
 # Scenario: BITSCTF (Memory & Network Analysis)
-DFIR or Digital Forensics and Incident Response is a field within cybersecurity that focuses on the identification, investigation, and remediation of cyberattacks. Here are the types of analysis you can expect throughout these sequence of challenges! 
+DFIR or Digital Forensics and Incident Response is a field within cybersecurity that focuses on the identification, investigation, and remediation of cyberattacks. Here are the types of analysis you can expect throughout these sequence of challenges!
+
+We are given a memory dump, AD1 image file and PCAP file for our investigation. So, tools like Volatility, FTK Imager and Wireshark will be required.
+
+![image](https://github.com/warlocksmurf/onlinectf-writeups/assets/121353711/c3d210be-66ba-40da-9b61-8631d6f9f000)
 
 ## Task 1: Intro to DFIR
 Question: There are a total of 7 DFIR challenges, including this. The above linked files are to be used for all of them. Submitting this flag BITSCTF{DFIR_r0ck55} will unlock the subsequent challenges for the category. Lets see what happened with MogamBro :(
 
 Flag: `BITSCTF{DFIR_r0ck55}`
 
-In this DFIR challenge, the authors provided us a memory dump, AD1 image and a pcap file for further analysis. The flag is given directly in the description.
-
-![image](https://github.com/warlocksmurf/onlinectf-writeups/assets/121353711/c3d210be-66ba-40da-9b61-8631d6f9f000)
+The flag is given directly in the description.
 
 ## Task 2: Access Granted!
 Question: First things first. MogamBro is so dumb that he might be using the same set of passwords everywhere, so lets try cracking his PC's password for some luck.
