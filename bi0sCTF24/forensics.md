@@ -46,6 +46,8 @@ Reading the blog again, I analyze the IndexedDB blob file (`https_app.slack.com_
 
 ![image](https://github.com/warlocksmurf/onlinectf-writeups/assets/121353711/c1ae7f39-9d05-448b-8e95-c5ea6ca4a1ad)
 
+Another method from @Dysnome is to use this ![tool](https://github.com/0xHasanM/Slack-Parser) to parse the Slack conversation.
+
 ### Q5: What is the hash of all the files that were synced to Google Drive before it was shredded? Format: verboten{md5 of each file separated by ':'}
 Flag: `verboten{ae679ca994f131ea139d42b507ecf457:4a47ee64b8d91be37a279aa370753ec9:870643eec523b3f33f6f4b4758b3d14c:c143b7a7b67d488c9f9945d98c934ac6:e6e6a0a39a4b298c2034fde4b3df302a}`
 
@@ -82,13 +84,20 @@ The question mentions something about Windows password, so I assume the answer i
 
 ![image](https://github.com/warlocksmurf/onlinectf-writeups/assets/121353711/6c78005a-e239-4675-8cd4-92a73fe79fee)
 
+```
+Reset Data
+{"version":1,"questions":[{"question":"What was your first pet’s name?","answer":"Stuart"},{"question":"What’s the name of the first school you attended?","answer":"FutureKidsSchool"},{"question":"What’s the first name of your oldest cousin?","answer":"Howard"}]}
+```
+
 ### Q9: What is the single use code that he copied into the clipboard and when did he copy it? Format: verboten{single_use_code:YYYY-MM-DD-HH-MM-SS}
 Flag: `verboten{830030:2024-02-16-23-24-43}`
 
-The question mentions clipboard history, so I did some research online I found this ![blog](https://www.inversecos.com/2022/05/how-to-perform-clipboard-forensics.html). Pretty straightforward, just extract `ActivitesCache.db` and analyze it on DB Browser. The `ClipboardPayload` shows the clipboard content.
+The question mentions clipboard history, so I did some research online I found this ![blog](https://www.inversecos.com/2022/05/how-to-perform-clipboard-forensics.html). Pretty straightforward, just extract and analyze the `ActivitesCache.db` file located in `\Users\randon\AppData\Local\ConnectedDevicesPlatform\dd683d380e7fa229\`. The `ClipboardPayload` shows the clipboard content.
 
 ![image](https://github.com/warlocksmurf/onlinectf-writeups/assets/121353711/c345777d-c3ea-48eb-98a8-8fd0d20adbab)
 
 ![image](https://github.com/warlocksmurf/onlinectf-writeups/assets/121353711/adde87e8-c67f-487a-ac33-61b26ba03e0b)
 
 For the epoch time, it should be adjusted to IST timezone format as mentioned by the authors. So we can identify the time and convert it to get the real time.
+
+
