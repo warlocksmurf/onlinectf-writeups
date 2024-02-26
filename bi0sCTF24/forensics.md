@@ -1,4 +1,4 @@
-# Challenge 1: verboten
+# Challenge: verboten
 ## Scenario
 Randon, an IT employee finds a USB on his desk after recess. Unable to contain his curiosity he decides to plug it in. Suddenly the computer goes haywire and before he knows it, some windows pops open and closes on its own. With no clue of what just happened, he tries seeking help from a colleague. Even after Richard’s effort to remove the malware, Randon noticed that the malware persisted after his system restarted.
 
