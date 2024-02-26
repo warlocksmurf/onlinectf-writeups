@@ -2,7 +2,7 @@
 DFIR or Digital Forensics and Incident Response is a field within cybersecurity that focuses on the identification, investigation, and remediation of cyberattacks. Here are the types of analysis you can expect throughout these sequence of challenges! 
 
 ## Task 1: Intro to DFIR
-Question: There are a total of 7 DFIR challenges, including this. The above linked files are to be used for all of them. Submitting this flag will unlock the subsequent challenges for the category. Lets see what happened with MogamBro :(
+Question: There are a total of 7 DFIR challenges, including this. The above linked files are to be used for all of them. Submitting this flag BITSCTF{DFIR_r0ck55} will unlock the subsequent challenges for the category. Lets see what happened with MogamBro :(
 
 Flag: `BITSCTF{DFIR_r0ck55}`
 
