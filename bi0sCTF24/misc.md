@@ -1,8 +1,7 @@
-# Solution
-## Task 1: Welcome
-Question: Some things are hidden in plain sight.
+# Challenge 1: Welcome
+Description: Some things are hidden in plain sight.
 
-Flag: bi0sctf{h1dd3n_1n_pl41n_s1ght}
+Flag: `bi0sctf{h1dd3n_1n_pl41n_s1ght}`
 
 I know this is just a welcome flag, but I still found it cool how this flag was hidden using Discord. Just copy the text of the annoucement post to get the flag embedded within the URL.
 
