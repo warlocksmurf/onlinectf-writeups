@@ -1,4 +1,4 @@
-# Challenge 1: PLC I 🤖
+## Challenge 1: PLC I 🤖
 The MAPNA CERT team has identified an intrusion into the plant's PLCs, discovering a covert message transferred to the PLC. Can you uncover this secret message?
 
 Flag: `MAPNA{y0U_sHOuLd_4lW4yS__CaR3__PaADd1n9!!}`
@@ -16,7 +16,7 @@ We are given a pcap file about PLC TCP packets. When analyzing the packets, we c
 6: d1n9!!}
 ```
 
-# Challenge 2: Tampered
+## Challenge 2: Tampered
 Our MAPNA flags repository was compromised, with attackers introducing one invalid flag. Can you identify the counterfeit flag?
 
 Flag: `MAPNA{Tx,D51otN\\eUf7qQ7>ToSYQ\\;5P6jTIHH#6TL+uv}`
@@ -27,7 +27,7 @@ We are given a text file with multiple fake flags, I guess we have to find the o
 
 ![8d0vc6](https://github.com/warlocksmurf/ctftime-writeups/assets/121353711/37889b81-3169-4b80-bc4f-926dbf63f771)
 
-# Challenge 3: XXG
+## Challenge 3: XXG
 Welcome to the Forensics XXG challenge! Our investigator stumbled upon a mysterious file. Can you uncover the hidden message?
 
 Flag: `MAPNA{F2FS_&_BFS_f1L3_5Ys73Ms_4rE_Nic3?!}`
