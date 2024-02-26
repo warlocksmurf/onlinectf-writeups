@@ -1,4 +1,3 @@
-# Solution
 ## Task 1: Kitty
 Question: Tetanus is a serious, potentially life-threatening infection that can be transmitted by an animal bite.
 
