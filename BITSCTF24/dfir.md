@@ -1,9 +1,12 @@
+# Scenario: 
+DFIR or Digital Forensics and Incident Response is a field within cybersecurity that focuses on the identification, investigation, and remediation of cyberattacks. Here are the types of analysis you can expect throughout these sequence of challenges! 
+
 ## Task 1: Intro to DFIR
-Question: DFIR or Digital Forensics and Incident Response is a field within cybersecurity that focuses on the identification, investigation, and remediation of cyberattacks. Here are the types of analysis you can expect throughout these sequence of challenges!
+Question: There are a total of 7 DFIR challenges, including this. The above linked files are to be used for all of them. Submitting this flag will unlock the subsequent challenges for the category. Lets see what happened with MogamBro :(
 
 Flag: `BITSCTF{DFIR_r0ck55}`
 
-In this DFIR challenge, the authors provided us a memory dump, AD1 image and a pcap file for further analysis. The flag is given directly in the challenge descryption.
+In this DFIR challenge, the authors provided us a memory dump, AD1 image and a pcap file for further analysis. The flag is given directly in the description.
 
 ![image](https://github.com/warlocksmurf/onlinectf-writeups/assets/121353711/c3d210be-66ba-40da-9b61-8631d6f9f000)
 
