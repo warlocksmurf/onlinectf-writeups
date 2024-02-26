@@ -1,4 +1,3 @@
-# Solution
 ## Task 1: ACM Borg Members
 Question: I am convinced the board members of Santa Clara's ACM clubs are cyborgs! They are definitely digitally enhanced! ACM Board? More like, ACM-BORG! If only I had a way of proving it.
 
