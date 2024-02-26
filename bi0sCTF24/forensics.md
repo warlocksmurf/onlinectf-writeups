@@ -14,7 +14,7 @@ I remember learning about USB registries from other CTFs, so I did some research
 ### Q2: What is the hash of the url from which the executable in the usb downloaded the malware from? Format: verboten{md5(url)}
 Flag: `verboten{11ecc1766b893aa2835f5e185147d1d2}`
 
-Reading the question, several keywords can be identified: url and downloaded. Hence, the answer is most likely in Randon's browser history. Looking at the user's directories, it seems that Google should be the browser used to download the malware.
+The question mentioned url and downloaded, so the answer is most likely in Randon's browser history. Looking at the user's directories, it seems that Google should be the browser used to download the malware.
 
 ![image](https://github.com/warlocksmurf/onlinectf-writeups/assets/121353711/35aa060d-42f2-485d-8dac-a1696aba0ffb)
 
