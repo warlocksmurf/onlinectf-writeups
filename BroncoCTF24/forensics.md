@@ -1,4 +1,3 @@
-# Solution
 ## Task 1: Medieval Beats
 Question: Check out my youtube video
 
