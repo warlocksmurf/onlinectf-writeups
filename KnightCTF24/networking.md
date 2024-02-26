@@ -1,6 +1,8 @@
 # Scenario: KnightCTF (Network Analysis)
 Recently one of Knight Squad's asset was compromised. We've figured out most but need your help to investigate the case deeply. As a SOC analyst, analyze the pacp file & identify the issues. 
 
+We are given a PCAP file for our investigation, which can be analyzed using Wireshark.
+
 ## Task 1: Vicker IP
 Question: What is the victim & attacker ip?
 
