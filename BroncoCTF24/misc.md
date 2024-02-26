@@ -1,4 +1,3 @@
-# Solution
 ## Task 1: Countries Unite
 Question: "yoshie" sent me a peculiar message. What could he possibly be trying to say?
 
