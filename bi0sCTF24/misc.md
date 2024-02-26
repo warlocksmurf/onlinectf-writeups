@@ -1,5 +1,5 @@
 # Challenge 1: Welcome
-Question: Some things are hidden in plain sight.
+### Question: Some things are hidden in plain sight.
 
 Flag: `bi0sctf{h1dd3n_1n_pl41n_s1ght}`
 
