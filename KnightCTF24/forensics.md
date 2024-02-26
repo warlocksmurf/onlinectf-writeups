@@ -1,7 +1,7 @@
-# Scenario
+# Challenge:
+## Scenario
 My boss, Muhammad, sent me this dump file of a memory. He told me that this OS has a malware virus that runs automatically. I need to find some more information about this OS, and the hacker also created some files in this OS. He gave me a task to solve this within 24 hours. I am afraid. Will you please help me? My boss sent some questions; please solve them on my behalf. There are total 7 challenges in this series. Best of luck.
 
-# Solution
 ## Task 1: OS
 Question: What is the OS version?
 
