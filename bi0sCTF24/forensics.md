@@ -1,7 +1,5 @@
-# Solution
-## Challenge 1: verboten
-
-### Scenario
+# Challenge 1: verboten
+## Scenario
 Randon, an IT employee finds a USB on his desk after recess. Unable to contain his curiosity he decides to plug it in. Suddenly the computer goes haywire and before he knows it, some windows pops open and closes on its own. With no clue of what just happened, he tries seeking help from a colleague. Even after Richard’s effort to remove the malware, Randon noticed that the malware persisted after his system restarted.
 
 We are given an .ad1 file for our investigation which can be analyzed using FTK Imager.
@@ -92,3 +90,5 @@ The question mentions clipboard history, so I did some research online I found t
 ![image](https://github.com/warlocksmurf/onlinectf-writeups/assets/121353711/c345777d-c3ea-48eb-98a8-8fd0d20adbab)
 
 ![image](https://github.com/warlocksmurf/onlinectf-writeups/assets/121353711/adde87e8-c67f-487a-ac33-61b26ba03e0b)
+
+For the epoch time, it should be adjusted to IST timezone format as mentioned by the authors. So we can identify the time and convert it to get the real time.
