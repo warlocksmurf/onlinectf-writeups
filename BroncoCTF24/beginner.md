@@ -1,4 +1,3 @@
-# Solution
 ## Task 1: Keyboard Elitist
 Question: My buddy is bragging about how cool his Framework laptop is and how much faster he can type than me. When I tried to type a message, it came out as garbage!
 ```
