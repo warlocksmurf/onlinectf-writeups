@@ -1,6 +1,5 @@
-# Solution
-## Task 1: PLC I 🤖
-Question: The MAPNA CERT team has identified an intrusion into the plant's PLCs, discovering a covert message transferred to the PLC. Can you uncover this secret message?
+# Challenge 1: PLC I 🤖
+Description: The MAPNA CERT team has identified an intrusion into the plant's PLCs, discovering a covert message transferred to the PLC. Can you uncover this secret message?
 
 Flag: `MAPNA{y0U_sHOuLd_4lW4yS__CaR3__PaADd1n9!!}`
 
