@@ -1,4 +1,3 @@
-# Solution
 ## Task 1: Wiki Wiki Wiki
 Question: Not much to go off here, but it’s all you need: Wikipedia and 128.125.52.138. The flag is not in the typical format, but wrap it in bronco{} before submitting. You will know when you find it.
 
