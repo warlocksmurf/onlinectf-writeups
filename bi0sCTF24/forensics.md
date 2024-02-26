@@ -94,10 +94,13 @@ Flag: `verboten{830030:2024-02-16-23-24-43}`
 
 The question mentions clipboard history, so I did some research online I found this ![blog](https://www.inversecos.com/2022/05/how-to-perform-clipboard-forensics.html). Pretty straightforward, just extract and analyze the `ActivitesCache.db` file located in `\Users\randon\AppData\Local\ConnectedDevicesPlatform\dd683d380e7fa229\`. The `ClipboardPayload` shows the clipboard content.
 
-![image](https://github.com/warlocksmurf/onlinectf-writeups/assets/121353711/c345777d-c3ea-48eb-98a8-8fd0d20adbab)
+![image](https://github.com/warlocksmurf/onlinectf-writeups/assets/121353711/7fb3a1c1-ab65-475c-bfee-458e250dbaab)
 
 ![image](https://github.com/warlocksmurf/onlinectf-writeups/assets/121353711/adde87e8-c67f-487a-ac33-61b26ba03e0b)
 
-For the epoch time, it should be adjusted to IST timezone format as mentioned by the authors. So we can identify the time and convert it to get the real time.
+For the epoch time in `LastModifiedOnClient`, it should be adjusted to IST timezone format as mentioned by the authors. So we can identify the time and convert it to get the real time.
 
+![image](https://github.com/warlocksmurf/onlinectf-writeups/assets/121353711/be3dde06-9c6d-4838-9960-b65b51821f6d)
+
+![image](https://github.com/warlocksmurf/onlinectf-writeups/assets/121353711/fd5fd577-c08b-4171-ab43-747e0a5df8f6)
 
