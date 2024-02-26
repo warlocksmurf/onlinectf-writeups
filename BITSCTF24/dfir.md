@@ -1,4 +1,4 @@
-# Scenario: 
+# Scenario: BITSCTF (Memory & Network Analysis)
 DFIR or Digital Forensics and Incident Response is a field within cybersecurity that focuses on the identification, investigation, and remediation of cyberattacks. Here are the types of analysis you can expect throughout these sequence of challenges! 
 
 ## Task 1: Intro to DFIR
