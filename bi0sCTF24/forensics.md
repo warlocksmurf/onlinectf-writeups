@@ -1,7 +1,7 @@
 # Scenario: verboten (Image analysis)
 Randon, an IT employee finds a USB on his desk after recess. Unable to contain his curiosity he decides to plug it in. Suddenly the computer goes haywire and before he knows it, some windows pops open and closes on its own. With no clue of what just happened, he tries seeking help from a colleague. Even after Richard’s effort to remove the malware, Randon noticed that the malware persisted after his system restarted.
 
-We are given an .ad1 file for our investigation which can be analyzed using FTK Imager.
+We are given an AD1 image file for our investigation, which can be analyzed using FTK Imager.
 
 ## Task 1
 Question: What is the serial number of the sandisk usb that he plugged into the system? And when did he plug it into the system? Format: verboten{serial_number:YYYY-MM-DD-HH-MM-SS}
