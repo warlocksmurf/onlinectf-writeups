@@ -1,4 +1,3 @@
-# Solution
 ## Task 1: Preschool Lessons
 Question: a b c... easy as 1 2 3... Do you REALLY know your ABCs? 
 ```
