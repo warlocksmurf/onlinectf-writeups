@@ -1,4 +1,4 @@
-# Scenario: DFIR (Network Analysis)
+# Scenario: KnightCTF (Network Analysis)
 Recently one of Knight Squad's asset was compromised. We've figured out most but need your help to investigate the case deeply. As a SOC analyst, analyze the pacp file & identify the issues. 
 
 ## Task 1: Vicker IP
