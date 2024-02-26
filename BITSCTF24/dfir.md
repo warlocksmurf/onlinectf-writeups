@@ -3,8 +3,6 @@ DFIR or Digital Forensics and Incident Response is a field within cybersecurity 
 
 We are given a memory dump, AD1 image file and PCAP file for our investigation, which can be analyzed using Volatility, FTK Imager and Wireshark respectively.
 
-![image](https://github.com/warlocksmurf/onlinectf-writeups/assets/121353711/c3d210be-66ba-40da-9b61-8631d6f9f000)
-
 ## Task 1: Intro to DFIR
 Question: There are a total of 7 DFIR challenges, including this. The above linked files are to be used for all of them. Submitting this flag BITSCTF{DFIR_r0ck55} will unlock the subsequent challenges for the category. Lets see what happened with MogamBro :(
 
