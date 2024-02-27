@@ -23,9 +23,9 @@ The question mentioned 'url' and 'downloaded', so the answer is most likely in R
 
 After extracting and analyzing the `History` artifact, the URL can be identified as `https://filebin.net/qde72esvln1cor0t/mal`.
 
-image](https://github.com/warlocksmurf/onlinectf-writeups/assets/121353711/cd38d044-c13d-4693-af29-bb5947eb7f93)
+![image](https://github.com/warlocksmurf/onlinectf-writeups/assets/121353711/cd38d044-c13d-4693-af29-bb5947eb7f93)
 
-image](https://github.com/warlocksmurf/onlinectf-writeups/assets/121353711/6079de11-e961-4745-a256-a8b438ff7525)
+![image](https://github.com/warlocksmurf/onlinectf-writeups/assets/121353711/6079de11-e961-4745-a256-a8b438ff7525)
 
 ## Task 3
 Question: What is the hash of the malware that the executable in the usb downloaded which persisted even after the efforts to remove the malware? Format: verboten{md5{malware_executable)}
@@ -34,7 +34,7 @@ Flag: `verboten{169cbd05b7095f4dc9530f35a6980a79}`
 
 Since the malware was already identified in the previous question, we just have to look for `mal.exe` in Randon's machine. After going through several common directories, the malware can be found in `C:\Users\randon\AppData\Roaming\Microsoft\Windows\Startup\`
 
-image](https://github.com/warlocksmurf/onlinectf-writeups/assets/121353711/fb94da6b-03ac-41bb-9931-bac373cef4d6)
+![image](https://github.com/warlocksmurf/onlinectf-writeups/assets/121353711/fb94da6b-03ac-41bb-9931-bac373cef4d6)
 
 ## Task 4
 Question: What is the hash of the zip file and the invite address of the remote desktop that was sent through slack? Format: verboten{md5(zip_file):invite_address}
