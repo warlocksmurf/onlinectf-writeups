@@ -43,7 +43,7 @@ Flag: `verboten{b092eb225b07e17ba8a70b755ba97050:1541069606}`
 
 Reading the question, it mentions Slack (a messaging app that can be installed in Windows and mobile devices). Analyzing Randon's machine, the Slack directory can be found in `C:\Users\randon\AppData\Roaming\`. The first thing I analyzed was the `root-state.json` file located in `C:\Users\randon\AppData\Roaming\Slack\storage\`. Using a JSON beautifier tool, it shows the name of the zip file clearly which is `file_shredder.zip`.
 
-image](https://github.com/warlocksmurf/onlinectf-writeups/assets/121353711/fee0b2f4-6574-434e-8c4d-b97b5b929f90)
+![image](https://github.com/warlocksmurf/onlinectf-writeups/assets/121353711/fee0b2f4-6574-434e-8c4d-b97b5b929f90)
 
 Reading on how I can extract cached files in Slack, I found this [blog](https://medium.com/@jeroenverhaeghe/forensics-finding-slack-chat-artifacts-d5eeffd31b9c) that mentions using [Nirsoft Chrome Cache Viewer](https://www.nirsoft.net/utils/chrome_cache_view.html) to view cached data in Slack. By filtering the name of the zip file, we can find the MD5 hash of the zip in the ETag column.
 
