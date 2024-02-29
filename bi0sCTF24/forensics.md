@@ -21,7 +21,7 @@ The question mentioned 'url' and 'downloaded', so the answer is most likely in t
 
 ![image](https://github.com/warlocksmurf/onlinectf-writeups/assets/121353711/35aa060d-42f2-485d-8dac-a1696aba0ffb)
 
-By analyzing the History artifact, the URL can be identified as `https://filebin.net/qde72esvln1cor0t/mal`.
+By analyzing the `History` artifact, the URL can be identified as `https://filebin.net/qde72esvln1cor0t/mal`.
 
 ![image](https://github.com/warlocksmurf/onlinectf-writeups/assets/121353711/cd38d044-c13d-4693-af29-bb5947eb7f93)
 
@@ -41,7 +41,7 @@ Question: What is the hash of the zip file and the invite address of the remote 
 
 Flag: `verboten{b092eb225b07e17ba8a70b755ba97050:1541069606}`
 
-Reading the question, it mentions Slack (a messaging app that can be installed in Windows and mobile devices). The Slack directory is located in `C:\Users\randon\AppData\Roaming\` and inside it, one file that caught my eye was root-state.json. Using a JSON beautifier tool, it shows the name of the downloaded zip file clearly as `file_shredder.zip`.
+Reading the question, it mentions Slack (a messaging app that can be installed in Windows and mobile devices). The Slack directory is located in `C:\Users\randon\AppData\Roaming\` and inside it, one file that caught my eye was `root-state.json`. Using a JSON beautifier tool, it shows the name of the downloaded zip file clearly as `file_shredder.zip`.
 
 ![image](https://github.com/warlocksmurf/onlinectf-writeups/assets/121353711/fee0b2f4-6574-434e-8c4d-b97b5b929f90)
 
@@ -71,11 +71,11 @@ Question: What is time of the incoming connection on AnyDesk? And what is the ID
 
 Flag: `verboten{2024-02-16-20-29-04:221436813}`
 
-Reading the question, it mentions AnyDesk (a program for Windows that allows you to remotely access another computer). Analyzing Randon's machine, the AnyDesk directory can be found in `C:\Users\randon\AppData\Roaming\`. Doing some research online, I found this [blog](https://medium.com/@tylerbrozek/anydesk-forensics-anydesk-log-analysis-b77ea37b90f1) that talks about AnyDesk forensics. The blog mentions that the information about successful AnyDesk connections are stored in ad.trace log file.
+Reading the question, it mentions AnyDesk (a program for Windows that allows you to remotely access another computer). Analyzing Randon's machine, the AnyDesk directory can be found in `C:\Users\randon\AppData\Roaming\`. Doing some research online, I found this [blog](https://medium.com/@tylerbrozek/anydesk-forensics-anydesk-log-analysis-b77ea37b90f1) that talks about AnyDesk forensics. The blog mentions that the information about successful AnyDesk connections are stored in `ad.trace` log file.
 
 ![image](https://github.com/warlocksmurf/onlinectf-writeups/assets/121353711/e17436a1-2a60-4f29-b88c-dd807fbc69bc)
 
-So by filtering 'incoming', the information about the AnyDesk connection can be found.
+So by filtering with the word 'incoming', the information about the AnyDesk connection can be found.
 
 ![image](https://github.com/warlocksmurf/onlinectf-writeups/assets/121353711/8ff49551-44c5-4cc6-b8ea-60b45ba4750f)
 
@@ -84,7 +84,7 @@ Question: When was the shredder executed? Format: verboten{YYYY-MM-DD-HH-MM-SS}
 
 Flag: `verboten{2024-02-16-08-31-06}`
 
-Reading the question, it mentions a shredder being executed. I assume it refers to an executable file within `file_shredder.zip`. However, this zip file was identified previously and assumed to be deleted since it was not present in the Downloads directory. Looking at common Window artifacts, prefetch files should be the best bet to gather information on deleted executables. Using [PECmd](https://github.com/EricZimmerman/PECmd) to parse the prefetch files, they can be further analyze using Timeline Explorer. Filtering with 'file_shredder', the executed date of `BLANKANDSECURE_X64.EXE-DF0E2BF6.pf` can be identified in the `SourceModified` entry. However, the date should be adjusted to 12H time format as mentioned by the authors.
+Reading the question, it mentions a shredder being executed. I assume it refers to an executable file within `file_shredder.zip`. However, this zip file was identified previously and assumed to be deleted since it was not present in the Downloads directory. Looking at common Window artifacts, prefetch files should be the best bet to gather information on deleted executables. Using [PECmd](https://github.com/EricZimmerman/PECmd) to parse the prefetch files, they can be further analyze using Timeline Explorer. Filtering with the word 'file_shredder', the executed date of `BLANKANDSECURE_X64.EXE-DF0E2BF6.pf` can be identified in the 'SourceModified' entry. However, the date should be adjusted to 12H time format as mentioned by the authors.
 
 ![image](https://github.com/warlocksmurf/onlinectf-writeups/assets/121353711/c5762d4a-a8dd-49de-98e3-cfd3fc130385)
 
@@ -93,7 +93,7 @@ Question: What are the answers of the backup questions for resetting the windows
 
 Flag: `verboten{Stuart:FutureKidsSchool:Howard}`
 
-The question mentions something about Windows password, so I assume the answer is in one of the Windows artifacts again. I randomly guessed that it was located in SAM hive since it stores local passwords for a Windows machine. Analyzing the hive, the answers for the backup questions can be found in the `ResetData` entry.
+The question mentions something about Windows password, so I assume the answer is in one of the Windows artifacts again. I randomly guessed that it was located in `SAM` hive since it stores local passwords for a Windows machine. Analyzing the hive, the answers for the backup questions can be found in the 'ResetData' entry.
 
 ![image](https://github.com/warlocksmurf/onlinectf-writeups/assets/121353711/6c78005a-e239-4675-8cd4-92a73fe79fee)
 
@@ -107,13 +107,13 @@ Question: What is the single use code that he copied into the clipboard and when
 
 Flag: `verboten{830030:2024-02-16-23-24-43}`
 
-The question mentions clipboard history, so I did some research online I found this [blog](https://www.inversecos.com/2022/05/how-to-perform-clipboard-forensics.html). Pretty straightforward, just extract and analyze the ActivitiesCache.db file located in `\Users\randon\AppData\Local\ConnectedDevicesPlatform\dd683d380e7fa229\`. The `ClipboardPayload` column shows the clipboard content.
+The question mentions clipboard history, so I did some research online I found this [blog](https://www.inversecos.com/2022/05/how-to-perform-clipboard-forensics.html). Pretty straightforward, just extract and analyze the `ActivitiesCache.db` file located in `\Users\randon\AppData\Local\ConnectedDevicesPlatform\dd683d380e7fa229\`. The 'ClipboardPayload' column shows the clipboard content.
 
 ![image](https://github.com/warlocksmurf/onlinectf-writeups/assets/121353711/7fb3a1c1-ab65-475c-bfee-458e250dbaab)
 
 ![image](https://github.com/warlocksmurf/onlinectf-writeups/assets/121353711/adde87e8-c67f-487a-ac33-61b26ba03e0b)
 
-For the epoch time in `LastModifiedOnClient`, it should be adjusted to IST timezone format as mentioned by the authors. So we can identify the time and convert it to get the real time.
+For the epoch time in 'LastModifiedOnClient' column, it should be adjusted to IST timezone format as mentioned by the authors. So we can identify the time and convert it to get the real time.
 
 ![image](https://github.com/warlocksmurf/onlinectf-writeups/assets/121353711/be3dde06-9c6d-4838-9960-b65b51821f6d)
 
