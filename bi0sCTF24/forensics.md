@@ -17,7 +17,7 @@ Question: What is the hash of the url from which the executable in the usb downl
 
 Flag: `verboten{11ecc1766b893aa2835f5e185147d1d2}`
 
-The question mentioned 'url' and 'downloaded', so the answer is most likely in the user's browser history. Going through the browsers in Randon's machine, it seems that the user has Google Chrome installed. So I extracted several Google artifacts located in `C:\Users\randon\AppData\Local\Google\Chrome\User Data\Default\` for further analysis.
+The question mentioned 'url' and 'downloaded', so the answer is most likely in the user's browser history. Going through the browsers in Randon's machine, it seems that the user has Chrome installed. So I extracted several Chrome artifacts located in `C:\Users\randon\AppData\Local\Google\Chrome\User Data\Default\` for further analysis.
 
 ![image](https://github.com/warlocksmurf/onlinectf-writeups/assets/121353711/35aa060d-42f2-485d-8dac-a1696aba0ffb)
 
@@ -47,7 +47,7 @@ Reading the question, it mentions Slack (a messaging app that can be installed i
 
 ![image](https://github.com/warlocksmurf/onlinectf-writeups/assets/121353711/8417b9d6-347c-44ce-bc43-3092be9bb2bf)
 
-Reading on how I can extract cached files in Slack, I found this [blog](https://medium.com/@jeroenverhaeghe/forensics-finding-slack-chat-artifacts-d5eeffd31b9c) that mentioned using [Nirsoft Chrome Cache Viewer](https://www.nirsoft.net/utils/chrome_cache_view.html) to view cached data in Slack. By filtering the name of the zip file, we can find the MD5 hash of the zip in the ETag column.
+Reading on how I can extract cached files in Slack, I found this [blog](https://medium.com/@jeroenverhaeghe/forensics-finding-slack-chat-artifacts-d5eeffd31b9c) that mentioned using [Nirsoft Chrome Cache Viewer](https://www.nirsoft.net/utils/chrome_cache_view.html) to view cached data in Slack. By filtering the name of the zip file ('file_shredder'), we can find the MD5 hash of the zip in the ETag column.
 
 ![image](https://github.com/warlocksmurf/onlinectf-writeups/assets/121353711/95c76b1c-7992-4534-9d88-e46852b21bd5)
 
