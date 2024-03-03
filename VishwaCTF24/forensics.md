@@ -121,6 +121,8 @@ Flag: `VishwaCTF{KUD0SD3T3CTIVE}`
 
 This question gave us a pcap file that seems to record USB data. I've done this in another CTF but it was for USB keyboard data only. Unfortunately, I could not finish this challenge before the CTF ended, so I attempted it again with help from @red on Discord. He mentioned that the reason my tool did not work is because the question gave us USB mouse data, not keyboard. After parsing HID data from the USB packets to a csv file, I can proceed to analyze them.
 
+![image](https://github.com/warlocksmurf/onlinectf-writeups/assets/121353711/20686e3e-70c7-4a27-8d6a-837da801de04)
+
 ```
 cat hiddata.csv | cut -d "," -f 7 | cut -d "\"" -f 2 | grep -vE "HID Data" > hexoutput.txt
 
