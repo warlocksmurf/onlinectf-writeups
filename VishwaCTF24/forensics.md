@@ -1,4 +1,11 @@
-## Task 1: Repo Riddles
+## Task 1: Smoke out the Rat
+Question: There was a major heist at the local bank. Initial findings suggest that an intruder from within the bank, specifically someone from the bank's database maintenance team, aided in the robbery. This traitor granted access to an outsider, who orchestrated the generation of fake transactions and the depletion of our valuable customers' accounts. We have the phone number, '789-012-3456', from which the login was detected, which manipulated the bank's employee data. Additionally, it's noteworthy that this intruder attempted to add gibberish to the binlog and ultimately dropped the entire database at the end of the heist. Your task is to identify the first name of the traitor, the last name of the outsider, and the time at which the outsider was added to the database. Flag format: VishwaCTF{TraitorFirstName_OutsiderLastName_HH:MM:SS}
+
+Flag: `VishwaCTF{}`
+
+The question gave us a MySQL binary log file. Unfortunately, I could not finish this challenge before the CTF ended, so I attempted it again with help from @rex on Discord.
+
+## Task 2: Repo Riddles
 Question: We got a suspicious Linkedin post which got a description and also a zip file with it. It is suspected that a message is hidden in there. Can you find it?
 
 LinkedIn Post Description:
@@ -13,7 +20,7 @@ Explore the code, unearth its nuances, and let me know your thoughts. Your feedb
 
 Flag: `VishwaCTF{G1tG1gger_2727}`
 
-The question gave us a zip file that stores a GitHub repository. Inside the hidden .git folder, there are several blobs that could lead us to the flag. Using this [tool](https://github.com/internetwache/GitTools/tree/master), I can extract commits and their content from a broken repository.
+The question gave us a zip file that stores a GitHub repository. Unfortunately, I could not finish this challenge before the CTF ended, so I attempted it again with help from @rex on Discord. Inside the hidden .git folder, there are several blobs that could lead us to the flag. Using this [tool](https://github.com/internetwache/GitTools/tree/master), I can extract commits and their content from a broken repository.
 
 ```
 └─$ sudo bash extractor.sh /vishwa/LearningGit/ /vishwa/Forensics
@@ -67,7 +74,7 @@ After going through the folders again, a png file can be found which contains th
 
 ![Screenshot 2024-03-01 151511](https://github.com/warlocksmurf/onlinectf-writeups/assets/121353711/a8dce862-15d5-42a2-a5c8-b672daf04266)
 
-## Task 2: Router |port|
+## Task 3: Router |port|
 Question: There's some unusual traffic on the daytime port, but it isn't related to date or time requests. Analyze the packet capture to retrieve the flag.
 
 Flag: `VishwaCTF{K3Y5_CAN_0P3N_10CK5}`
