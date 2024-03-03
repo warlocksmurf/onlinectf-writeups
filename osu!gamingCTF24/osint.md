@@ -104,7 +104,7 @@ Clicking on the `main sheet`, it leads to several social links. I went to his Tw
 
 ![image](https://github.com/warlocksmurf/onlinectf-writeups/assets/121353711/50c70897-8e71-4dc5-b288-85ea8f19ce5e)
 
-This video had the flag.
+Reading the challenge name again, it is related to `Mappool` so going through the VODs, the video can be found with the flag at the end.
 
 ![image](https://github.com/warlocksmurf/onlinectf-writeups/assets/121353711/0f624b85-a79f-4b37-b17d-bc14b35fcf5d)
 
