@@ -114,6 +114,67 @@ VishwaCTF{karmany-evadhikaras te ma phaleshu kadachana ma karma-phala-hetur bhur
 ## Task 4: Cyber Pursuit Manhunt
 Question: In response to alarming reports, our cybersecurity team is actively pursuing a hacker known by the alias "h3ck3r_h3_bh41", who poses a serious threat by extorting innocent individuals for monetary gain. Your mission is to track down this hacker and provide us with the crucial information needed to apprehend them. Retrieve the Hacker's complete full name (first name, middle name, last name), formatted in lowercase and replacing spaces with underscores, along with the associated website domain. Flag Format: VishwaCTF{full_name_domain.in}
 
-Flag: `VishwaCTF{}`
+Flag: `VishwaCTF{simon_john_peter_tadobanationalpark.in}`
 
-We are given a handle of the hacker, so I used it on Twitter/X and it gives the hacker's account. However, his posts seem to be unrelated to the challenge, hence I looked into his followers. Thinking I was in the right track, I asked the admins if the followers are related to the challenge, but its not (rip my 2 hours). So I had no clue how to complete it.
+We are given a handle of the hacker, so I used it on Twitter/X and it gives the hacker's account. However, his posts seem to be unrelated to the challenge, hence I looked into his followers. Thinking I was in the right track, I asked the admins if the followers are related to the challenge, but its not (rip my 2 hours). Unfortunately, I could not finish this challenge before the CTF ended, so I attempted it again with help from @rex on Discord.
+
+![image](https://github.com/warlocksmurf/onlinectf-writeups/assets/121353711/49332cd5-ad7d-44af-b992-d1b1c62d9938)
+
+The solution was actually very straightforward, looking at the user's posts, the one that stands out the most was the first post.
+
+```
+Who is Cookie the baby chick ? Very Cute indeed :)
+```
+
+It seems that I should be looking for someone called Cookie (who is a baby chick??). Looking around social websites, it seems that Instagram has the user. Looking around his posts and followers, his dad's full name can be found which is `simon_j_peter`. Additionally, his first post mentions his dad's Youtube channel.
+
+![image](https://github.com/warlocksmurf/onlinectf-writeups/assets/121353711/4d24fed3-f2e4-4136-945b-c15bbef5de18)
+
+![image](https://github.com/warlocksmurf/onlinectf-writeups/assets/121353711/45776875-620e-4778-b6af-75f71e4f7fed)
+
+Analyzing his Youtube, the username can be obtained but it seems that I am in another loophole. However, I remembered Cookie mentioning his dad being a `workaholic`, so his dad could be on LinkedIn.
+
+![image](https://github.com/warlocksmurf/onlinectf-writeups/assets/121353711/bccdeb2b-f319-47a1-8e65-5a3aaa82ed78)
+
+Using the username `huskywoofwoof` on LinkedIn, he can be found after going through several users and it shows his middle name being `John`.
+
+![image](https://github.com/warlocksmurf/onlinectf-writeups/assets/121353711/5425b3d0-e0ce-4166-aa67-9a21da6aa27b)
+
+Looking at his second post, another link could be obtained that leads to an [image](https://postimg.cc/HVPR8h0Y). Having no clue on what to do with the image, I analyzed its metadata using exiftool and found coordinates for `Maharashtra, India`.
+
+![stock](https://github.com/warlocksmurf/onlinectf-writeups/assets/121353711/a042540b-ffb0-44c6-aea2-90b3cc907c7d)
+
+```
+└─$ exiftool stock.jpg 
+ExifTool Version Number         : 12.76
+File Name                       : stock.jpg
+Directory                       : .
+File Size                       : 417 kB
+File Modification Date/Time     : 2024:03:03 09:08:04-05:00
+File Access Date/Time           : 2024:03:03 09:08:11-05:00
+File Inode Change Date/Time     : 2024:03:03 09:08:04-05:00
+File Permissions                : -rwxrwxrwx
+File Type                       : JPEG
+File Type Extension             : jpg
+MIME Type                       : image/jpeg
+Exif Byte Order                 : Big-endian (Motorola, MM)
+Light Source                    : Unknown
+Orientation                     : Unknown (0)
+GPS Latitude Ref                : North
+GPS Longitude Ref               : East
+Image Width                     : 1500
+Image Height                    : 1101
+Encoding Process                : Baseline DCT, Huffman coding
+Bits Per Sample                 : 8
+Color Components                : 3
+Y Cb Cr Sub Sampling            : YCbCr4:2:0 (2 2)
+Image Size                      : 1500x1101
+Megapixels                      : 1.7
+GPS Latitude                    : 19 deg 57' 41.54" N
+GPS Longitude                   : 79 deg 17' 46.13" E
+GPS Position                    : 19 deg 57' 41.54" N, 79 deg 17' 46.13" E
+```
+
+![image](https://github.com/warlocksmurf/onlinectf-writeups/assets/121353711/2335fde0-2a28-4aa3-8e4f-c3354dd15324)
+
+Remembering there were Tigers in the picture, I linked the location and tigers to find out about a national park called `Tadoba Andhari Tiger Reserve`. So the national park's [website](https://www.tadobanationalpark.in/) must be the domain.
