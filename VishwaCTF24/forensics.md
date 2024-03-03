@@ -1,4 +1,73 @@
-## Task 1: Router |port|
+## Task 1: Repo Riddles
+Question: We got a suspicious Linkedin post which got a description and also a zip file with it. It is suspected that a message is hidden in there. Can you find it?
+
+LinkedIn Post Description:
+
+Title: My First Project -The Journey Begins
+
+Hello fellow developers and curious minds!
+
+I'm thrilled to share with you my very first Git project - a labor of love, dedication, and countless late-night commits. 🚀
+
+Explore the code, unearth its nuances, and let me know your thoughts. Your feedback is invaluable and will contribute to the ongoing evolution of this project.
+
+Flag: `VishwaCTF{G1tG1gger_2727}`
+
+The question gave us a zip file that stores a GitHub repository. Inside the hidden .git folder, there are several blobs that could lead us to the flag. Using this [tool](https://github.com/internetwache/GitTools/tree/master), I can extract commits and their content from a broken repository.
+
+```
+└─$ sudo bash extractor.sh /vishwa/LearningGit/ /vishwa/Forensics
+[sudo] password for kali: 
+###########
+# Extractor is part of https://github.com/internetwache/GitTools
+#
+# Developed and maintained by @gehaxelt from @internetwache
+#
+# Use at your own risk. Usage might be illegal in certain circumstances. 
+# Only for educational purposes!
+###########
+[+] Found commit: 02adccb9209edc074b17967f062cc60413f64293
+[+] Found file: /mnt/hgfs/sharedfolder/vishwa/Forensics/0-02adccb9209edc074b17967f062cc60413f64293/index.html
+[+] Found file: /mnt/hgfs/sharedfolder/vishwa/Forensics/0-02adccb9209edc074b17967f062cc60413f64293/style.css
+[+] Found commit: 41dca9f040deaa65060065ef78523ba44b2c60f1
+[+] Found commit: 57f66532b0c6403f95dcfaffa0650f28850d6922
+[+] Found commit: 9370bf54bc070fa53c5f2b8b14834db8ed7f3e79
+[+] Found commit: aa3306a61a6dc2b4b1fe97ede91c5c843d452c58
+[+] Found file: /mnt/hgfs/sharedfolder/vishwa/Forensics/4-aa3306a61a6dc2b4b1fe97ede91c5c843d452c58/f1.txt
+[+] Found file: /mnt/hgfs/sharedfolder/vishwa/Forensics/4-aa3306a61a6dc2b4b1fe97ede91c5c843d452c58/f2.txt
+[+] Found file: /mnt/hgfs/sharedfolder/vishwa/Forensics/4-aa3306a61a6dc2b4b1fe97ede91c5c843d452c58/f3.txt
+[+] Found file: /mnt/hgfs/sharedfolder/vishwa/Forensics/4-aa3306a61a6dc2b4b1fe97ede91c5c843d452c58/f4.txt
+[+] Found file: /mnt/hgfs/sharedfolder/vishwa/Forensics/4-aa3306a61a6dc2b4b1fe97ede91c5c843d452c58/f5.txt
+[+] Found commit: db01ffe29d0ea57655fcd880dea8816cb2d74d9f
+[+] Found file: /mnt/hgfs/sharedfolder/vishwa/Forensics/5-db01ffe29d0ea57655fcd880dea8816cb2d74d9f/f1.txt
+[+] Found file: /mnt/hgfs/sharedfolder/vishwa/Forensics/5-db01ffe29d0ea57655fcd880dea8816cb2d74d9f/f2.txt
+[+] Found file: /mnt/hgfs/sharedfolder/vishwa/Forensics/5-db01ffe29d0ea57655fcd880dea8816cb2d74d9f/f3.txt
+[+] Found file: /mnt/hgfs/sharedfolder/vishwa/Forensics/5-db01ffe29d0ea57655fcd880dea8816cb2d74d9f/f4.txt
+[+] Found file: /mnt/hgfs/sharedfolder/vishwa/Forensics/5-db01ffe29d0ea57655fcd880dea8816cb2d74d9f/f5.txt
+[+] Found commit: ebf967130d550a180f7e3fda47a5ca96bb442c81
+[+] Found file: /mnt/hgfs/sharedfolder/vishwa/Forensics/6-ebf967130d550a180f7e3fda47a5ca96bb442c81/Screenshot 2024-03-01 151511.png
+```
+
+Reading each text file manually, the flag is broken up into index strings. So I went ahead to grep the word "string" and got parts of the flag. However, index 6, 7 and 8 was missing from the results obtained.
+
+```
+└─$ grep -rni "string" .
+./0-02adccb9209edc074b17967f062cc60413f64293/index.html:116:                    string[3: 6] = G1g 
+./2-57f66532b0c6403f95dcfaffa0650f28850d6922/commit-meta.txt:6:string[0] = G string[1] = 1 string[2] = t
+./4-aa3306a61a6dc2b4b1fe97ede91c5c843d452c58/f4.txt:6:string -- VishwaCTF{}
+./4-aa3306a61a6dc2b4b1fe97ede91c5c843d452c58/f4.txt:8:HERE -- 0th Index of string is V.
+./5-db01ffe29d0ea57655fcd880dea8816cb2d74d9f/f4.txt:5:string[9] = _
+./5-db01ffe29d0ea57655fcd880dea8816cb2d74d9f/f4.txt:6:string[10] = 2
+./5-db01ffe29d0ea57655fcd880dea8816cb2d74d9f/f4.txt:7:string[11] = 7
+./5-db01ffe29d0ea57655fcd880dea8816cb2d74d9f/f4.txt:8:string[12] = 2
+./5-db01ffe29d0ea57655fcd880dea8816cb2d74d9f/f4.txt:9:string[13] = 7
+```
+
+After going through the folders again, a png file can be found which contains the letters for index 6, 7 and 8.
+
+![Screenshot 2024-03-01 151511](https://github.com/warlocksmurf/onlinectf-writeups/assets/121353711/a8dce862-15d5-42a2-a5c8-b672daf04266)
+
+## Task 2: Router |port|
 Question: There's some unusual traffic on the daytime port, but it isn't related to date or time requests. Analyze the packet capture to retrieve the flag.
 
 Flag: `VishwaCTF{K3Y5_CAN_0P3N_10CK5}`
@@ -22,11 +91,11 @@ Okay, I will search for it. Wait a second, I won't be sending the SSL key on thi
 Okay! ...
 ```
 
-Reading the decoded text, it seems that the flag is the password of the user `Anonymous` and the hacker managed to steal a SSL key to encrypt packets. It also mentions that the SSL key is sent to another hacker via FTP. So I filtered the pcap to find ftp-data and found 2 packets with content. Reading their content, it seems to look like `(Pre)-Master-Secret log files` but encoded again.
+Reading the decoded text, it seems that the flag is the password of the user `Anonymous` and the hacker managed to steal a SSL key to encrypt packets. It also mentions that the SSL key is sent to another hacker via FTP. So I filtered the pcap to find ftp-data and found 2 packets, so the key is probably broken up into 2 parts.
 
 ![image](https://github.com/warlocksmurf/onlinectf-writeups/assets/121353711/f684a1a6-e4f0-4a77-95b4-6ca3c1b6c351)
 
-Again, I randomly guessed Vigenère with the same site and succesfully extracted both PSK log files and placed them into Wireshark. This can be done by navigating to `Preferences > Protocols > TLS > Edit` and add in the PSK log files.
+Again, I randomly guessed Vigenère with the same site and succesfully extracted both PSK log files and placed them into Wireshark. This can be done by navigating to `Preferences > Protocols > TLS > (Pre)-Master-Secret log files` and add in the key file.
 
 ![image](https://github.com/warlocksmurf/onlinectf-writeups/assets/121353711/6f597263-e4e2-4582-8645-e25d13baa080)
 
