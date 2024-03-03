@@ -37,11 +37,11 @@ The question mentions that one of the staff of VishwaCTF is top 3% globally on T
  
 ![image](https://github.com/warlocksmurf/onlinectf-writeups/assets/121353711/dbdcc8d1-f140-4cda-a2f9-dca947e9fa58)
 
-Looking at their members on the CTF website, it seems that `Ankush Kaudi` is the right person. Using his name on TryHackMe, the profile can be found with the flag.
+Looking at their members on the CTF website, it seems that `Ankush Kaudi` is the right person. Using his username on TryHackMe via URL, the profile can be found with the flag.
 
 ![image](https://github.com/warlocksmurf/onlinectf-writeups/assets/121353711/dabbaac1-c4b0-492f-b130-a62cf13f3f82)
 
-![image](https://github.com/warlocksmurf/onlinectf-writeups/assets/121353711/4897677b-22cc-4b1b-aa65-e341f3df9c57)
+![image](https://github.com/warlocksmurf/onlinectf-writeups/assets/121353711/305e0e47-146b-4a33-b0d6-f4e201f80108)
 
 ## Task 3: ifconfig_inet
 Question: In the labyrinth of binary shadows, Elliot finds himself standing at the crossroads of justice and chaos. Mr. Robot, the enigmatic leader of the clandestine hacktivist group, has just unleashed a digital storm upon Evil Corp's fortress. The chaos is palpable, but this is just the beginning.
