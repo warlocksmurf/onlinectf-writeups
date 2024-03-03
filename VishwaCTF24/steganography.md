@@ -24,11 +24,11 @@ Question: You as a FBI Agent, are working on a old case involving a ransom of $2
 
 Flag: `VishwaCTF{1_W!LL_3E_B@CK}`
 
-We are given a mp3 file that seems to be just music. However, after I analyzed it on Audacity, it seems that there were hidden messages in them. Listening on the part, it seems that the voice message is reversed, so I reversed the whole mp3 file and used this [site](https://www.veed.io/) to get the transcript of the reversed mp3 file.
+We are given a mp3 file that seems to be just music. However, after I analyzed it on Audacity, it seems that there were hidden messages in them.
 
 ![image](https://github.com/warlocksmurf/onlinectf-writeups/assets/121353711/511d1a18-1fdd-47c4-afb4-f78e1c09c8e3)
 
-![image](https://github.com/warlocksmurf/onlinectf-writeups/assets/121353711/c26d91ed-c569-455b-841c-27ec3ad8ba14)
+Listening on the part, it seems that the voice message is reversed, so I reversed the whole mp3 file and used this [site](https://www.veed.io/) to get the transcript of the reversed mp3 file.
 
 The transcript:
 ```
