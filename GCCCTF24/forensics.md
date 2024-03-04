@@ -3,7 +3,7 @@ Question: Introduction to anomaly detection. Find the phone numbers that are not
 
 Flag: `GCC{R3g3x_4r3_W1ld!!!!}`
 
-The question provided us a csv file of a phonebook. Looking at the entries, the phone numbers were suspicious as they were weirdly placed like hex or some sorts. So regex knowledge was required in this challenge (which me and teammate suck at).
+We are given a csv file of a phonebook where the question mentioned having anomalies in it. Looking at the entries, the phone numbers were suspicious as they were weirdly placed like hex or some sorts. So regex knowledge was required in this challenge (which me and teammate suck at).
 
 ```
 └─$ cat phonebook.csv | head
@@ -16,7 +16,7 @@ dec0464c-ca08-4a38-ac4e-22f404ea2711,亮介,Baudry,mcclainamy@example.com,070-05
 206f7df8-8193-4cdd-a4a2-ab958d50fd90,直子,池田,trananthony@example.com,03-1255-1140,"boulevard Vallée
 ```
 
-Our unintended method was pretty funny, what we did was guessing the flag by changing the starting parts of the flag `GCC{` to hex, and using the hex to find each number. The first step was to extract phone numbers only from the csv file. This can be done with a simple script @Odin did.
+Our unintended method was pretty funny, what we did was guessing the flag by changing the starting parts of the flag `GCC{` to hex, and using the hex to find each number. The first step was to extract phone numbers only from the csv file.
 
 ```
 import csv
@@ -75,15 +75,25 @@ Format: GCC{cmd.exe:127.0.0.1:8080}
 
 Flag: `GCC{conhost.exe:172.29.107.95:7894}`
 
-For the first question, I look up in TEMP folder because I met many cases about hackers saved their malicious files in TEMP folder. And I found a bunch of files which looks very suspicious:
+We are given an AD1 image and an ISO file. Analyzing the ISO file, there seems to be an lnk file. In it, there is a powershell command that shows `conhost.exe` running the malware.
 
-![image](https://github.com/warlocksmurf/onlinectf-writeups/assets/75618225/7681b4a0-9806-42e4-8dd4-dc338d7211f2)
+```
+"C:\Windows\System32\conhost.exe" --headless "%WINDIR%\System32\WindowsPowerShell\v1.0\powershell.exe" "$zweeki=$env:Temp;$ocounselk=[System.IO.Path]::GetFullPath($zweeki);$poledemy = $pwd;Copy-Item "$poledemy\*" -Destination $ocounselk -Recurse -Force | Out-Null;cd $ocounselk;;.\Facture.pdf; .\NisSrv.exe"
+```
 
-Upload **mpclient.dll** to Virustotal, the result is MALICIOUS. Moreover, when I checked lnk file, I found that there's powershell command and it's hosted by **conhost.exe**, so **conhost.exe** must be the answer for Q1:
+![image](https://github.com/warlocksmurf/onlinectf-writeups/assets/121353711/5948d0c7-663a-4aba-908c-06ff2e99e2d8)
 
-![image](https://github.com/warlocksmurf/onlinectf-writeups/assets/75618225/5b57060c-ff61-49bf-b589-01c1c7484c14)
+Next, we analyzed the AD1 image to find the malware, specifically `Facture.pdf` and `NisSrv.exe`. Since I had many cases about hackers saving their malicious files in a Temp folder, we navigated to `C:\Users\user\AppData\Temp\` . Inside the folder, the two suspicious files can be found with other temporary files.
 
-While check **mpclient.dll** information in Virustotal, I found the answer for Q2, very nice 😂😂😂:
+![image](https://github.com/warlocksmurf/onlinectf-writeups/assets/121353711/2d7b80c2-2517-44e9-b478-34089c70bf49)
+
+After extracting and running `NisSrv.exe` on our virtual machine, it said that it requires `mpclient.dll` to run. Since the ``mpclient.dll`` was in the Temp folder already, we can extract it and upload it to VirusTotal. Surprisingly, it was very malicious.
+
+![image](https://github.com/warlocksmurf/onlinectf-writeups/assets/121353711/1bc30910-155d-4db2-a26d-da23f380da05)
+
+![image](https://github.com/warlocksmurf/onlinectf-writeups/assets/121353711/5a5af963-0d08-4ab1-a0c5-969122fe6980)
+
+Looking at the dll behavior information, the IP and port can be obtained.
 
 ![image](https://github.com/warlocksmurf/onlinectf-writeups/assets/75618225/d7eabe6a-702f-446e-8ed4-9c8fc9044c7e)
 
@@ -98,15 +108,62 @@ Format: GCC{CVE-ID_CVE-ID_CVE-ID:object_name:malware_family}
 
 Flag: `GCC{CVE-2017-11882_CVE-2018-0798_CVE-2018-0802:EQuAtIon.3:Formbook}`
 
-Very clear, we have the email file and we need to analyze it to find the answer. I will use Thunderbird to analyze it:
+We are given an EML file which sould be a phishing email. Using Thunderbird to analyze the email, an attachment named ``Bank detail.doc`` can be obtained.
+
 ![image](https://github.com/warlocksmurf/onlinectf-writeups/assets/75618225/0b666a47-9248-4d53-bb9f-16ea82d8c554)
-It's easy to see that there's an attachment named **Bank detail.doc**, not waiting, I download it and continue to analyze. For the first question, the easiest way is upload file to Virustotal, and for that I found the first answer!:
+
+```
+└─$ cat Return\ book\ loan.eml
+From: =?UTF-8?B?RW1pbHkgWWXvvIjlj7blsI/lh6TvvIk=?=<49040aa6ab2@7d7.com>
+To: 7a90e38a@a0c170b93efd5e.au
+Subject: =?UTF-8?B?6K+35bC95b+r5qOA5p+l5oKo55qE6ZO26KGM6LSm5oi35bm256Gu6K6k?=
+Date: 14 Aug 2023 22:53:50 -0400
+MIME-Version: 1.0
+Content-Type: multipart/mixed;
+        boundary="----=_NextPart_000_0012_365A62DA.F43F1297"
+X-Rejection-Reason: 8 - 557 Your IP address is from a blacklisted country. Disconnecting..
+
+This is a multi-part message in MIME format.
+
+------=_NextPart_000_0012_365A62DA.F43F1297
+Content-Type: text/html;
+        charset="iso-8859-1"
+Content-Transfer-Encoding: quoted-printable
+
+[redacted]
+------=_NextPart_000_0012_365A62DA.F43F1297
+Content-Type: application/msword; name="Bank details.doc"
+Content-Transfer-Encoding: base64
+Content-Disposition: attachment; filename="Bank details.doc"
+
+e1xydGYxDQ0NCQkJCXtcKlxkZ21MYXlvdXRNUlU1MjM3ODU3NjUgXDt9DXtcNjQwNTgyMTM5
+cGxlYXNlIGNsaWNrIEVuYWJsZSBlZGl0aW5nIGZyb20gdGhlIHllbGxvdyBiYXIgYWJvdmUu
+VGhlIGluZGVwZW5kZW50IGF1ZGl0b3JzkiBvcGluaW9uIHNheXMgdGhlIGZpbmFuY2lhbCBz
+dGF0ZW1lbnRzIGFyZSBmYWlybHkgc3RhdGVkIGluIGFjY29yZGFuY2Ugd2l0aCB0aGUgYmFz
+aXMgb2YgYWNjb3VudGluZyB1c2VkIGJ5IHlvdXIgb3JnYW5pemF0aW9uLiBTbyB3aHkgYXJl
+IHRoZSBhdWRpdG9ycyBnaXZpbmcgeW91IHRoYXQgb3RoZXIgbGV0dGVyIEluIGFuIGF1ZGl0
+IG9mIGZpbmFuY2lhbCBzdGF0ZW1lbnRzLCBwcm9mZXNzaW9uYWwgc3RhbmRhcmRzIHJlcXVp
+...
+```
+
+By analyzing the metadata, we can retrieve the attachment data and decode it via CyberChef. Decoding it gives us a `RTF file` that seems malicious too.
+
+![image](https://github.com/warlocksmurf/onlinectf-writeups/assets/121353711/fe23cd46-0dc6-4f01-bcec-91ad5ddbc9cf)
+
+After downloading and uploading the file to VirusTotal, the CVEs can be obtained.
+
 ![image](https://github.com/warlocksmurf/onlinectf-writeups/assets/75618225/baeb06aa-17a1-4eec-8a13-1daa1788dc58)
-For the second question, because of RTF type, I will use **rtfdump** to extract all objects inside it, and I found the second answer:
+
+Next, @Odin mentioned using [rtfdump](https://github.com/DidierStevens/DidierStevensSuite/blob/master/rtfdump.py) to extract content from the RTF file. Doing so, we can obtain the name of the object containing the malicious payload.
+
 ![image](https://github.com/warlocksmurf/onlinectf-writeups/assets/75618225/e82934e8-91ba-4dba-a0b4-4f19fa7e8517)
-Now, the last question is find the malware family, you can use some threat intelligence tools (I recommend you to use [abuse.ch](https://abuse.ch/)). I use URLhaus to check C2 server, and I have many results about Formbook:
-![image](https://github.com/warlocksmurf/onlinectf-writeups/assets/75618225/31a47b26-4e66-41ff-bd4d-9ae706fed11d)
-Moreover, many articles discuss about Formbook with CVE we found in the previous question, so it must be the answer:
+
+Now we have to find the malware family using threat intelligence tools like [abuse.ch](https://abuse.ch/) (Recommended by @Odin). Using [URLhaus](https://urlhaus.abuse.ch/) and the IP address of the C2 server, several results about `Formbook` can be found.
+
+![image](https://github.com/warlocksmurf/onlinectf-writeups/assets/121353711/648a04c9-1191-46c2-9c85-735fe30ef392)
+
+Additionally, many articles discussed about Formbook with the CVEs we found previously.
+
 ![image](https://github.com/warlocksmurf/onlinectf-writeups/assets/75618225/517aed52-3136-43ef-9cb7-4956c2affb7a)
 
 ## Task 4: Threat analysis
@@ -116,18 +173,29 @@ Format: GCC{portC2:MITREATT&CK_Persistence_Technique:malware_family}
 
 Flag: `GCC{1245:T1547:njrat}`
 
-With this computer, it's very sad that my computer does not have storage enough to download the sample ;-;. But thanks to **warlocksmurf**, I still can solve it because he can download the sample 😂😂😂. Moreover, he found the malicious file (SO YUMMY!!!!!!!!!!!!!!!):
-![image](https://github.com/warlocksmurf/onlinectf-writeups/assets/75618225/17f780e3-e953-4a97-ac38-f0a1712ee275)
+We are given an raw disk image for our investigation. Sadly @Odin had not enough storage to download the image ;-;. However, we still managed to solve it by sharing the malware hash with one another. Analyzing the image file with Autopsy, a malware can be found in `C:\Users\operator\AppData\Roaming\` called `aL4N.exe`.
 
-Now let's download it and analyze!. MITRE ID is the easiest thing to find, just upload it to Virustotal and you can see it: 
+![image](https://github.com/warlocksmurf/onlinectf-writeups/assets/121353711/7d2dda88-9bb7-4294-a3b9-480ff205adbb)
 
-![image](https://github.com/warlocksmurf/onlinectf-writeups/assets/75618225/cb6493af-6f4b-4c76-8d30-36a7e9049829)
+So we extracted the malware and analyzed it via VirusTotal. The MITRE ATT&CK persistence technique can be found.
 
-Use **exiftool** I know that the program was compiled by AutoIT v3:
+![image](https://github.com/warlocksmurf/onlinectf-writeups/assets/121353711/817817ae-5346-4e2c-b24b-16cd385c08db)
+
+Checking the file's metadata, we find that the program was compiled using `AutoIT v3`.
+
 ![image](https://github.com/warlocksmurf/onlinectf-writeups/assets/75618225/0f2ea677-e35f-453e-ba5c-b2dc5c4f4989)
 
-At first I tried to use some online sandboxes to run it and capture the established connection, but it's not worked when I put it to my flag; so I thought: "Maybe I need to decompile this program to see inside". Very fast, I search google for how to decompile autoit program, and fortunately, I found **Exe2Aut.exe** which is used to decompiled AutoIT program!. Just drag your file to Exe2Aut screen, and decompiled result will appear!:
+VirusTotal also shows the program being packed by AutoIT. 
 
+![image](https://github.com/warlocksmurf/onlinectf-writeups/assets/121353711/a48e1ae8-d7c6-4785-b03d-e646fddde9e8)
+
+At first @Odin tried to use online sandboxes to run the malware and capture any established connections, but it did not work. So he thought: "Maybe I need to decompile this program to see inside". Searching Google on how to decompile AutoIt programs, we can find [Exe2Aut.exe](https://domoticx.com/autoit3-decompiler-exe2aut/). Dragging the malware to the program, it automatically decompiles it for us.
+
+<details>
+<summary>
+	The decompiled output
+</summary>
+	
 ```
 #NoTrayIcon
 Global Const $fw_dontcare = 0
@@ -3058,10 +3126,14 @@ Func uncryptrdppassword($bin)
 	Return BinaryToString(DllStructGetData($pwdhash, 1), 4)
 EndFunc
 ```
-This is malware source code, and I found port C2! And in the source code, I found interesting string: "0njxq80":
+</details>
+
+In the source code, the C2 IP and port can be found. Additionally, an interesting string can be found on variable `$y`.
 
 ![image](https://github.com/warlocksmurf/onlinectf-writeups/assets/75618225/6a97707b-0984-47ed-9618-0f370c93d3b3)
 
-Copy it to google, I found [github link](https://github.com/mwsrc/njRAT/blob/master/njWorm/src.txt.au3) and njRAT will be malware family.
+Searching `0njxq80` on Google, another source code can be found on [GitHub](https://github.com/mwsrc/njRAT/blob/master/njWorm/src.txt.au3). This shows that `njRAT` was the malware family.
 
-I'm very happy when I solved all forensic challenges. We tried hard so much and this is the perfect result for us!. Thank you very much for reading our solution! 
+![image](https://github.com/warlocksmurf/onlinectf-writeups/assets/121353711/917a79f2-db84-437f-aa32-9489f27f4ea6)
+
+> I'm very happy when I solved all forensic challenges. We tried hard so much and this is the perfect result for us!. Thank you very much for reading our solution! ~ @Odin
