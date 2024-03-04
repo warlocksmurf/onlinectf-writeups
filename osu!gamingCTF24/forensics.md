@@ -1,9 +1,26 @@
 ## Task 1: nathan-on-osu
 Question: Here's an old screenshot of chat logs between sahuang and Nathan on hollow's Windows machine, but a crucial part of the conversation seems to be cropped out... Can you help to recover the flag from the future?
 
-Flag: ``
+Flag: `osu{cr0pp3d_Future_Candy<3}`
 
-The question provided us a cropped png image. This is a classic forensics challenge in CTFs and by using this [tool](https://acropalypse.app/), the flag can be obtained with the right resoulation.
+The question provided us a cropped png image. This is a classic forensics challenge in CTFs where several CVEs actually correlate to this such as CVE-2023-28303 and CVE-2023-21036.
+
+![nathan_on_osu](https://github.com/warlocksmurf/onlinectf-writeups/assets/121353711/aeebc31f-0bb4-4ffc-bf8d-47ef9caf83b5)
+
+By using this [tool](https://acropalypse.app/), the flag can be obtained with the right width and height. However, the web tool does not work for me, so I went ahead and used this [tool](https://github.com/frankthetank-music/Acropalypse-Multi-Tool/tree/main) instead. PS: when downloading the tool and receiving this error, just change the code to `from gif_lib import *`.
+
+```
+PS C:\Users\ooiro\Desktop\Acropalypse-Multi-Tool-1.0.0> python gui.py
+Traceback (most recent call last):
+  File "C:\Users\ooiro\Desktop\Acropalypse-Multi-Tool-1.0.0\gui.py", line 15, in <module>
+    from gif_lib import acropalypse_gif
+```
+
+Running the tool with the appropriate resolution, the flag can be obtained.
+
+![image](https://github.com/warlocksmurf/onlinectf-writeups/assets/121353711/9a282e4d-061b-43be-bb8a-0a71f5288710)
+
+![nathan flag](https://github.com/warlocksmurf/onlinectf-writeups/assets/121353711/4035976e-7320-4ecb-8557-7182a2dea9aa)
 
 ## Task 2: volatile-map
 Question: Hey osu! players, our SOC team was informed that a group of spies from Mai Corp is trying to sabotage our infrastructure via their secret map in osu!.
