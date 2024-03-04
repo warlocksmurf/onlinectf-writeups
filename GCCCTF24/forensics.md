@@ -73,7 +73,19 @@ Question: Following the compromise of a partner, your colleague has to capture t
 
 Format: GCC{cmd.exe:127.0.0.1:8080}
 
-Flag: `GCC{}`
+For the first question, I look up in TEMP folder because I met many cases about hackers saved their malicious files in TEMP folder. And I found a bunch of files which looks very suspicious:
+
+![image](https://github.com/warlocksmurf/onlinectf-writeups/assets/75618225/7681b4a0-9806-42e4-8dd4-dc338d7211f2)
+
+Upload **mpclient.dll** to Virustotal, the result is MALICIOUS. Moreover, when I checked lnk file, I found that there's powershell command and it's hosted by **conhost.exe**, so **conhost.exe** must be the answer for Q1:
+
+![image](https://github.com/warlocksmurf/onlinectf-writeups/assets/75618225/5b57060c-ff61-49bf-b589-01c1c7484c14)
+
+While check **mpclient.dll** information in Virustotal, I found the answer for Q2, very nice 😂😂😂:
+
+![image](https://github.com/warlocksmurf/onlinectf-writeups/assets/75618225/d7eabe6a-702f-446e-8ed4-9c8fc9044c7e)
+
+Flag: `GCC{conhost.exe:172.29.107.95:7894}`
 
 ## Task 3: Fill the library
 Question: An employee has been compromised following a malicious email campaign. In order to allow him to resume his activities, we have entrusted you with analyzing the email.
