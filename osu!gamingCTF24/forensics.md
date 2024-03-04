@@ -41,7 +41,6 @@ PID     PPID    ImageFileName   Offset(V)       Threads Handles SessionId       
 *** 2272        4556    osu!.exe        0xca8603f1f080  34      -       1       True    2024-03-01 13:41:15.000000      N/A
 **** 7928       2272    notepad.exe     0xca8604d4d340  3       -       1       True    2024-03-01 13:42:17.000000      N/A
 **** 6188       2272    notepad.exe     0xca8604d77340  3       -       1       True    2024-03-01 13:42:38.000000      N/A
-...
 ```
 
 So I used the cmdline plugin to check for suspicious commands and I was right, notepad has a command that seems to be the flag itself.
