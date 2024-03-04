@@ -3136,4 +3136,5 @@ Searching `0njxq80` on Google, another source code can be found on [GitHub](http
 
 ![image](https://github.com/warlocksmurf/onlinectf-writeups/assets/121353711/917a79f2-db84-437f-aa32-9489f27f4ea6)
 
-> I'm very happy when I solved all forensic challenges. We tried hard so much and this is the perfect result for us!. Thank you very much for reading our solution! ~ @Odin
+My teammate @Odin left a wholesome message:
+> I'm very happy when I solved all forensic challenges. We tried hard so much and this is the perfect result for us!. Thank you very much for reading our solution!
