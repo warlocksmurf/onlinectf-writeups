@@ -3044,8 +3044,12 @@ Func uncryptrdppassword($bin)
 EndFunc
 ```
 This is malware source code, and I found port C2! And in the source code, I found interesting string: "0njxq80":
+
 ![image](https://github.com/warlocksmurf/onlinectf-writeups/assets/75618225/6a97707b-0984-47ed-9618-0f370c93d3b3)
-Copy it to google, I found [github link](https://github.com/mwsrc/njRAT/blob/master/njWorm/src.txt.au3) and njRAT will be malware family 
+
+Copy it to google, I found [github link](https://github.com/mwsrc/njRAT/blob/master/njWorm/src.txt.au3) and njRAT will be malware family.
+
+Flag: `GCC{1245:T1547:njrat}`
 
 I'm very happy when I solved all forensic challenges. We tried hard so much and this is the perfect result for us!. Thank you very much for reading our solution! 
 
