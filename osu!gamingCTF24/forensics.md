@@ -29,9 +29,26 @@ Can you help us investigate what they were trying to do?
 
 Flag: `osu{hide_n_seeeeeeeeeek}`
 
-The question provided us a memory dump (my favourite). So by using volatility3, I managed to find a suspicious commands from notepad using cmdline plugin.
+The question provided us a memory dump (my favourite). So by using volatility3, I managed to find `osu!.exe` program running `notepad.exe` for some reason (kinda sus).
 
 ```
+└─$ python3 vol.py -f ~/Desktop/sharedfolder/osu/memory.dmp windows.pstree 
+Volatility 3 Framework 2.5.2
+Progress:  100.00               PDB scanning finished                                
+PID     PPID    ImageFileName   Offset(V)       Threads Handles SessionId       Wow64   CreateTime      ExitTime
+
+...
+*** 2272        4556    osu!.exe        0xca8603f1f080  34      -       1       True    2024-03-01 13:41:15.000000      N/A
+**** 7928       2272    notepad.exe     0xca8604d4d340  3       -       1       True    2024-03-01 13:42:17.000000      N/A
+**** 6188       2272    notepad.exe     0xca8604d77340  3       -       1       True    2024-03-01 13:42:38.000000      N/A
+...
+```
+
+So I used the cmdline plugin to check for suspicious commands and I was right, notepad has a command that seems to be the flag itself.
+
+```
+└─$ python3 vol.py -f ~/Desktop/sharedfolder/osu/memory.dmp windows.cmdline
+...
 7928    notepad.exe     "C:\Windows\System32\notepad.exe" C:\Users\Administrator\AppData\Local\osu!\Songs\beatmap-638448119315467561-ambient-relaxing-music-for-you-15969\osu{ - 686964655f6e (sahuang) [X3NlZWVlZWVlZWVla30=].osu
 ```
 
