@@ -54,3 +54,20 @@ So I used the cmdline plugin to check for suspicious commands and I was right, n
 Analyzing this command closely, it seems that the flag is basically the command line. where `686964655f6e` is hex encoded and `X3NlZWVlZWVlZWVla30=` is based 64 encoded. After decoding them, the flag can be obtained. PS: I got 3rd blood for the first time!!
 
 ![image](https://github.com/warlocksmurf/onlinectf-writeups/assets/121353711/00059c0b-c825-45bd-945a-3352bf4cd343)
+
+## Task 3: out-of-click
+Question: I love playing this map but recently I noticed that some of the circles seem off. Can you help me find the locations of the weird circles?
+
+Flag: `osu{BTMC_15_mY_G0aT}`
+
+We are given a beatmap folder. Looking into it, there are different types of the beatmap (Normal, Out of Click, Time Freeze). Reading the question, I assume that the differences can be found by comparing `Normal` and `Out of Click` of the beatmap. 
+
+![image](https://github.com/warlocksmurf/onlinectf-writeups/assets/121353711/007503eb-e126-4e4b-b013-7d78fde0f5f6)
+
+Using this online [tool](https://www.diffchecker.com/text-compare/), we can compare the differences of `[HitObjects]` between the two modes of the beatmap. The tool shows 5 additional lines placed within the `Out of Click` mode.
+
+![image](https://github.com/warlocksmurf/onlinectf-writeups/assets/121353711/1f1bee6f-e851-4594-b01b-332d54d809bc)
+
+Randomly placing the first four digits of each line on CyberChef, it translates to the flag.
+
+![image](https://github.com/warlocksmurf/onlinectf-writeups/assets/121353711/5924eab3-3538-4d47-b63d-af8a1c8a249b)
