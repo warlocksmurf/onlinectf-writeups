@@ -1,8 +1,16 @@
-![1680103178404](https://github.com/warlocksmurf/onlinectf-writeups/assets/121353711/d0d0a0c8-fe72-4c06-bbda-dde8236b7581)
+$ whoami
 
-## Teams: 
+Username: warlocksmurf
+
+Teams: 
 * [HLG](https://ctftime.org/team/276386)
 * [M53](https://ctftime.org/team/211971)
+
+Skills:
+* Forensics
+* OSINT
+* Basic Web
+* Basic Cryptography
 
 ## 2024
 * [GCCCTF](https://github.com/warlocksmurf/ctftime-writeups/blob/main/GCCCTF24)
