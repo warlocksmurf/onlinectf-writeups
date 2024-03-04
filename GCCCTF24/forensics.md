@@ -64,3 +64,14 @@ After that we perform our guessing game LOL. Since we know the parts of the flag
 ```
 
 ![image](https://github.com/warlocksmurf/onlinectf-writeups/assets/121353711/82ae1b0e-26ef-4fc2-987d-2dae835fa132)
+
+## Task 2: Pretty Links
+Question: Following the compromise of a partner, your colleague has to capture the file system of a victim machine. In addition to that, a strange file attracted attention during its investigation.
+
+* Find the binary used to initiate the indirect command execution
+* Find the IP and port of the attacker
+
+Format: GCC{cmd.exe:127.0.0.1:8080}
+
+Flag: `GCC{}`
+
