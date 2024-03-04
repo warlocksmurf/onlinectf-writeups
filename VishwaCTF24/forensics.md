@@ -3,7 +3,7 @@ Question: There was a major heist at the local bank. Initial findings suggest th
 
 Flag: `VishwaCTF{}`
 
-The question gave us a MySQL binary log file. Unfortunately, I could not finish this challenge before the CTF ended, so I attempted it again with help from @rex on Discord.
+We are given a MySQL binary log file. Unfortunately, I could not finish this challenge before the CTF ended, so I attempted it again with help from @rex on Discord.
 
 ## Task 2: Repo Riddles
 Question: We got a suspicious Linkedin post which got a description and also a zip file with it. It is suspected that a message is hidden in there. Can you find it?
@@ -20,7 +20,7 @@ Explore the code, unearth its nuances, and let me know your thoughts. Your feedb
 
 Flag: `VishwaCTF{G1tG1gger_2727}`
 
-The question gave us a zip file that stores a GitHub repository. Unfortunately, I could not finish this challenge before the CTF ended, so I attempted it again with help from @rex on Discord. Inside the hidden .git folder, there are several blobs that could lead us to the flag. Using this [tool](https://github.com/internetwache/GitTools/tree/master), I can extract commits and their content from a broken repository.
+We are given a zip file that contains a GitHub repository. Unfortunately, I could not finish this challenge before the CTF ended, so I attempted it again with help from @rex on Discord. Inside the hidden .git folder, there are several blobs that could lead us to the flag. Using this [tool](https://github.com/internetwache/GitTools/tree/master), I can extract commits and their content from a broken repository.
 
 ```
 └─$ sudo bash extractor.sh /vishwa/LearningGit/ /vishwa/Forensics
@@ -147,28 +147,4 @@ cat hiddata.csv | cut -d "," -f 7 | cut -d "\"" -f 2 | grep -vE "HID Data" > hex
 @red mentioned a [writeup](https://github.com/sourcekris/ctf-solutions/blob/master/forensics/google16-for2/README.md) that talks about extracting USB mouse data. With their script, the flag can be obtained.
 
 ```
-#!/usr/bin/python
-
-from PIL import Image, ImageDraw
-from subprocess import check_output
-
-print "[*] Extracting data from pcap"
-with open('/dev/null') as DN:
-    md = [x.strip() for x in check_output(['tshark','-r','capture.pcapng','-Tfields','-e','usb.capdata','usb.capdata','and','usb.device_address==3'],stderr=DN).splitlines()]
-
-x = 1000    # origin coords
-y = 300
-
-img = Image.new("RGB",(1200,800),"white")
-dr = ImageDraw.Draw(img)
-
-print "[*] Drawing you a picture!"
-for line in md:
-    coords = [j if j<128 else (j-256) for j in [int(k,16) for k in line.split(':')]]
-    x += coords[1]
-    y += coords[2]
-    if coords[0] != 0:
-        dr.rectangle(((x - 2, y - 2), (x + 2, y + 2)), fill="black")
-
-img.show()
 ```
