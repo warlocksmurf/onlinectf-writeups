@@ -62,7 +62,7 @@ Flag: `osu{BTMC_15_mY_G0aT}`
 
 We are given a beatmap folder. Looking into it, there are different types of the beatmap (Normal, Out of Click, Time Freeze). Reading the question, I assume that the differences can be found by comparing `Normal` and `Out of Click` of the beatmap. 
 
-![image](https://github.com/warlocksmurf/onlinectf-writeups/assets/121353711/007503eb-e126-4e4b-b013-7d78fde0f5f6)
+![image](https://github.com/warlocksmurf/onlinectf-writeups/assets/121353711/f1d5e5d1-04e0-43ed-add6-1cc43738504d)
 
 Using this online [tool](https://www.diffchecker.com/text-compare/), we can compare the differences of `[HitObjects]` between the two modes of the beatmap. The tool shows 5 additional lines placed within the `Out of Click` mode.
 
