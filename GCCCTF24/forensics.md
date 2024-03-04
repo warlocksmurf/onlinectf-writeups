@@ -73,6 +73,8 @@ Question: Following the compromise of a partner, your colleague has to capture t
 
 Format: GCC{cmd.exe:127.0.0.1:8080}
 
+Flag: `GCC{conhost.exe:172.29.107.95:7894}`
+
 For the first question, I look up in TEMP folder because I met many cases about hackers saved their malicious files in TEMP folder. And I found a bunch of files which looks very suspicious:
 
 ![image](https://github.com/warlocksmurf/onlinectf-writeups/assets/75618225/7681b4a0-9806-42e4-8dd4-dc338d7211f2)
@@ -85,8 +87,6 @@ While check **mpclient.dll** information in Virustotal, I found the answer for Q
 
 ![image](https://github.com/warlocksmurf/onlinectf-writeups/assets/75618225/d7eabe6a-702f-446e-8ed4-9c8fc9044c7e)
 
-Flag: `GCC{conhost.exe:172.29.107.95:7894}`
-
 ## Task 3: Fill the library
 Question: An employee has been compromised following a malicious email campaign. In order to allow him to resume his activities, we have entrusted you with analyzing the email.
 
@@ -95,6 +95,8 @@ Question: An employee has been compromised following a malicious email campaign.
 * Find the family name of this malware
 
 Format: GCC{CVE-ID_CVE-ID_CVE-ID:object_name:malware_family}
+
+Flag: `GCC{CVE-2017-11882_CVE-2018-0798_CVE-2018-0802:EQuAtIon.3:Formbook}`
 
 Very clear, we have the email file and we need to analyze it to find the answer. I will use Thunderbird to analyze it:
 ![image](https://github.com/warlocksmurf/onlinectf-writeups/assets/75618225/0b666a47-9248-4d53-bb9f-16ea82d8c554)
@@ -107,11 +109,12 @@ Now, the last question is find the malware family, you can use some threat intel
 Moreover, many articles discuss about Formbook with CVE we found in the previous question, so it must be the answer:
 ![image](https://github.com/warlocksmurf/onlinectf-writeups/assets/75618225/517aed52-3136-43ef-9cb7-4956c2affb7a)
 
-Flag: `GCC{CVE-2017-11882_CVE-2018-0798_CVE-2018-0802:EQuAtIon.3:Formbook}`
 ## Task 4: Threat analysis
 While the operator was working on his machine, he noticed strange behaviour on his workstation. With the help of his CERT, he made a copy of the hard disk for analysis. Using your knowledge of forensics and threat analysis, find out some of the characteristics of this malware.
 
 Format: GCC{portC2:MITREATT&CK_Persistence_Technique:malware_family}
+
+Flag: `GCC{1245:T1547:njrat}`
 
 With this computer, it's very sad that my computer does not have storage enough to download the sample ;-;. But thanks to **warlocksmurf**, I still can solve it because he can download the sample 😂😂😂. Moreover, he found the malicious file (SO YUMMY!!!!!!!!!!!!!!!):
 ![image](https://github.com/warlocksmurf/onlinectf-writeups/assets/75618225/17f780e3-e953-4a97-ac38-f0a1712ee275)
@@ -3061,11 +3064,4 @@ This is malware source code, and I found port C2! And in the source code, I foun
 
 Copy it to google, I found [github link](https://github.com/mwsrc/njRAT/blob/master/njWorm/src.txt.au3) and njRAT will be malware family.
 
-Flag: `GCC{1245:T1547:njrat}`
-
 I'm very happy when I solved all forensic challenges. We tried hard so much and this is the perfect result for us!. Thank you very much for reading our solution! 
-
-
-
-
-
