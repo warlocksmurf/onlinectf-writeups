@@ -3,7 +3,7 @@ Question: Let's infiltrate OSU! Hint: Maybe you may want to visit the author's o
 
 Flag: `osu{tr1v4l_5rc_1n5p3c7_1n_webs1t3}`
 
-The question provided us a website that will most likely give us the flag and the author's osu! profile. The website wants us to find the banner image with its respective domain.
+We are given a website that will most likely give us the flag and the author's osu! profile. The website wants us to find the banner image with its respective domain.
 
 ![image](https://github.com/warlocksmurf/onlinectf-writeups/assets/121353711/bbb716cc-fb3d-4195-a76f-27da0be6ed8e)
 
