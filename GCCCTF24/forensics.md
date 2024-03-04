@@ -3,7 +3,7 @@ Question: Introduction to anomaly detection. Find the phone numbers that are not
 
 Flag: `GCC{R3g3x_4r3_W1ld!!!!}`
 
-The question provided us a csv file of a phonebook. Looking at the entries, the phone numbers were suspicious as they were weirdly placed like hex or some sorts. So regex knowledge was required in this challenge (which me and teammate suck at).
+We are given a csv file of a phonebook. Looking at the entries, the phone numbers were suspicious as they were weirdly placed like hex or some sorts. So regex knowledge was required in this challenge (which me and teammate suck at).
 
 ```
 └─$ cat phonebook.csv | head
@@ -75,3 +75,48 @@ Format: GCC{cmd.exe:127.0.0.1:8080}
 
 Flag: `GCC{}`
 
+We are given an AD1 image, an EML file, and an ISO file. It seems that the EML file could be a phishing email since we are basically analyzing malware in this challenge. First, I imported the ISO file to FTK imager to analyze its content. Inside it was a lnk file. So I extracted it and will use it for further analysis.
+
+![image](https://github.com/warlocksmurf/onlinectf-writeups/assets/121353711/1238d94b-887e-4bc4-b218-3bebd0c9944e)
+
+Now for the EML file, analyzing the email body, 
+
+```
+From: =?UTF-8?B?RW1pbHkgWWXvvIjlj7blsI/lh6TvvIk=?=<49040aa6ab2@7d7.com>
+To: 7a90e38a@a0c170b93efd5e.au
+Subject: =?UTF-8?B?6K+35bC95b+r5qOA5p+l5oKo55qE6ZO26KGM6LSm5oi35bm256Gu6K6k?=
+Date: 14 Aug 2023 22:53:50 -0400
+MIME-Version: 1.0
+Content-Type: multipart/mixed;
+        boundary="----=_NextPart_000_0012_365A62DA.F43F1297"
+X-Rejection-Reason: 8 - 557 Your IP address is from a blacklisted country. Disconnecting..
+
+This is a multi-part message in MIME format.
+
+------=_NextPart_000_0012_365A62DA.F43F1297
+Content-Type: text/html;
+        charset="iso-8859-1"
+Content-Transfer-Encoding: quoted-printable
+
+[redacted]
+------=_NextPart_000_0012_365A62DA.F43F1297
+Content-Type: application/msword; name="Bank details.doc"
+Content-Transfer-Encoding: base64
+Content-Disposition: attachment; filename="Bank details.doc"
+
+e1xydGYxDQ0NCQkJCXtcKlxkZ21MYXlvdXRNUlU1MjM3ODU3NjUgXDt9DXtcNjQwNTgyMTM5
+cGxlYXNlIGNsaWNrIEVuYWJsZSBlZGl0aW5nIGZyb20gdGhlIHllbGxvdyBiYXIgYWJvdmUu
+VGhlIGluZGVwZW5kZW50IGF1ZGl0b3JzkiBvcGluaW9uIHNheXMgdGhlIGZpbmFuY2lhbCBz
+dGF0ZW1lbnRzIGFyZSBmYWlybHkgc3RhdGVkIGluIGFjY29yZGFuY2Ugd2l0aCB0aGUgYmFz
+aXMgb2YgYWNjb3VudGluZyB1c2VkIGJ5IHlvdXIgb3JnYW5pemF0aW9uLiBTbyB3aHkgYXJl
+IHRoZSBhdWRpdG9ycyBnaXZpbmcgeW91IHRoYXQgb3RoZXIgbGV0dGVyIEluIGFuIGF1ZGl0
+IG9mIGZpbmFuY2lhbCBzdGF0ZW1lbnRzLCBwcm9mZXNzaW9uYWwgc3RhbmRhcmRzIHJlcXVp
+cmUgdGhhdCBhdWRpdG9ycyBvYnRhaW4gYW4gdW5kZXJzdGFuZGluZyBvZiBpbnRlcm5hbCBj
+b250cm9scyB0byB0aGUgZXh0ZW50IG5lY2Vzc2FyeSB0byBwbGFuIHRoZSBhdWRpdC4gQXVk
+aXRvcnMgdXNlIHRoaXMgdW5kZXJzdGFuZGluZyBvZiBpbnRlcm5hbCBjb250cm9scyB0byBh
+c3Nlc3MgdGhlIHJpc2sgb2YgbWF0ZXJpYWwgbWlzc3RhdGVtZW50IG9mIHRoZSBmaW5hbmNp
+YWwgc3RhdGVtZW50cyBhbmQgdG8gZGVzaWduIGFwcHJvcHJpYXRlIGF1ZGl0IHByb2NlZHVy
+ZXMgdG8gbWluaW1pemUgdGhhdCByaXNrLlRoZSBkZWZpbml0aW9uIG9mIGdvb2QgaW50ZXJu
+YWwgY29udHJvbHMgaXMgdGhhdCB0aGV5IGFsbG93IGVycm9ycyBhbmQgb3RoZXIgbWlzc3Rh
+dGVtZW50cyB0byBiZSBwcmV2ZW50ZWQgb3IgZGV0ZWN0ZWQgYW5kIGNvcnJlY3RlZCBieSAo
+```
