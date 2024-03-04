@@ -5,7 +5,6 @@ Check out where the legendary osu! KFC guy streams, and find the flag there.
 
 Flag: `osu{mastery_in_terrible_rage-inducing_chokes}`
 
-
 The question mentioned something about osu and KFC. Googling them together, we get this [reddit post](https://www.reddit.com/r/osugame/comments/15keb8j/everyone_is_having_kfc_with_thepoon_lol_d/) about osu players having KFC with a streamer called `ThePooN`. 
 
 ![image](https://github.com/warlocksmurf/onlinectf-writeups/assets/121353711/a33f0cb5-36f3-4adb-8df1-957fe1ad785e)
@@ -23,7 +22,7 @@ Question: My friend is so obsessed with osu! that he refused to play any CTF! To
 
 Flag: `osu{@nd_wh3n_y0u_fuxx1n_cL1ck3d_nd_c_1T!!!}`
 
-The question gave a gif file showing a person pointing at his monitor. Doing a simple reverse search, we find that the person was `Aireu`.
+We are given a gif file showing a person pointing at his monitor. Doing a simple reverse search, we find that the person was `Aireu`.
 
 ![image](https://github.com/warlocksmurf/onlinectf-writeups/assets/121353711/69e5750f-650e-4bd8-b5b0-f7937d4bfe20)
 
@@ -86,7 +85,7 @@ Question: i (willwam) did a replay for a tournament quite recently (no more than
 
 Flag: `osu{m3ow}`
 
-The question has a link that redirects us to willwam's osu account. On the `tournament box` section, there are two hyperlinks `[a]` and `[staffing]`.
+We are given a URL that redirects us to willwam's osu account. On the `tournament box` section, there are two hyperlinks `[a]` and `[staffing]`.
 
 ![image](https://github.com/warlocksmurf/onlinectf-writeups/assets/121353711/4a88c569-9b7f-4c65-acac-32a678e7e298)
 
