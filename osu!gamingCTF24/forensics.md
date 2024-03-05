@@ -29,7 +29,7 @@ Can you help us investigate what they were trying to do?
 
 Flag: `osu{hide_n_seeeeeeeeeek}`
 
-We are given a memory dump (my favourite). So by using volatility3, I managed to find `osu!.exe` program running `notepad.exe` instances for some reason (kinda sus).
+We are given a memory dump for our investigation. So by using volatility3, I managed to find `osu!.exe` program running `notepad.exe` instances for some reason (kinda sus).
 
 ```
 └─$ python3 vol.py -f ~/Desktop/sharedfolder/osu/memory.dmp windows.pstree 
