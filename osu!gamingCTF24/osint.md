@@ -80,7 +80,7 @@ Using the link, it leads us to his favourite beatmap (ClariS the goat). Clicking
 
 ![image](https://github.com/warlocksmurf/onlinectf-writeups/assets/121353711/36fdee5d-7227-4afc-9e27-8f6be3cecd4b)
 
-## Task 3: when-you-see-it
+## Task 3: mappool-feedback
 Question: i (willwam) did a replay for a tournament quite recently (no more than 2 weeks ago) and hid a flag in it! can you find it?
 
 Flag: `osu{m3ow}`
