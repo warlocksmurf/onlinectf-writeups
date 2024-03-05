@@ -3,11 +3,11 @@ Question: Here's an old screenshot of chat logs between sahuang and Nathan on ho
 
 Flag: `osu{cr0pp3d_Future_Candy<3}`
 
-We are given a cropped png image that is a common forensics challenge in CTFs where several CVEs actually correlate to it (CVE-2023-28303 and CVE-2023-21036).
+We are given a cropped png image. For this challenge, I could not solve it before the CTF ended, but I knew it was a common forensics challenge in CTFs where we can use tools such as [Acropalypse](https://acropalypse.app/) to recover the image with the right resolution.
 
 ![nathan_on_osu](https://github.com/warlocksmurf/onlinectf-writeups/assets/121353711/aeebc31f-0bb4-4ffc-bf8d-47ef9caf83b5)
 
-By using this [tool](https://acropalypse.app/), the flag can be obtained with the right width and height. However, the web tool does not work for me, so I went ahead and used [Acropalypse-Multi-Tool](https://github.com/frankthetank-music/Acropalypse-Multi-Tool/tree/main) instead. PS: when downloading the tool and receiving this error, just change the code to `from gif_lib import *`.
+However, the web tool did not work for me for some reason. So I went ahead and used [Acropalypse-Multi-Tool](https://github.com/frankthetank-music/Acropalypse-Multi-Tool/tree/main) instead. PS: when downloading the tool and receiving this error, just change the code to `from gif_lib import *`.
 
 ```
 PS C:\Users\ooiro\Desktop\Acropalypse-Multi-Tool-1.0.0> python gui.py
@@ -16,7 +16,7 @@ Traceback (most recent call last):
     from gif_lib import acropalypse_gif
 ```
 
-Running the tool with the appropriate resolution, the flag can be obtained.
+Running the tool with the appropriate width and height, the flag can be obtained.
 
 ![image](https://github.com/warlocksmurf/onlinectf-writeups/assets/121353711/9a282e4d-061b-43be-bb8a-0a71f5288710)
 
