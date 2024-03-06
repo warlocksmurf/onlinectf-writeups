@@ -108,6 +108,8 @@ Format: GCC{CVE-ID_CVE-ID_CVE-ID:object_name:malware_family}
 
 Flag: `GCC{CVE-2017-11882_CVE-2018-0798_CVE-2018-0802:EQuAtIon.3:Formbook}`
 
+Edit: @Crazyman just did a in-depth research on why the question flag is actually wrong. I highly recommend to read his [blog](https://hackmd.io/@A3jD_2-KSHGKXuvq1LDRuA/BysMWt4pT) for more details.
+
 We are given an EML file which sould be a phishing email. Using Thunderbird to analyze the email, an attachment named ``Bank detail.doc`` can be obtained.
 
 ![image](https://github.com/warlocksmurf/onlinectf-writeups/assets/75618225/0b666a47-9248-4d53-bb9f-16ea82d8c554)
