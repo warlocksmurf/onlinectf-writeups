@@ -1,9 +1,31 @@
 ## Task 1: Smoke out the Rat
 Question: There was a major heist at the local bank. Initial findings suggest that an intruder from within the bank, specifically someone from the bank's database maintenance team, aided in the robbery. This traitor granted access to an outsider, who orchestrated the generation of fake transactions and the depletion of our valuable customers' accounts. We have the phone number, '789-012-3456', from which the login was detected, which manipulated the bank's employee data. Additionally, it's noteworthy that this intruder attempted to add gibberish to the binlog and ultimately dropped the entire database at the end of the heist. Your task is to identify the first name of the traitor, the last name of the outsider, and the time at which the outsider was added to the database. Flag format: VishwaCTF{TraitorFirstName_OutsiderLastName_HH:MM:SS}
 
-Flag: `VishwaCTF{}`
+Flag: `VishwaCTF{Matthew_Darwin_18:01:29}`
 
-We are given a MySQL binary log file. Unfortunately, I could not finish this challenge before the CTF ended, so I attempted it again with help from @rex on Discord.
+We are given a MySQL binary log file. Unfortunately, I could not finish this challenge before the CTF ended, so I attempted it again with help from @rex on Discord. Using a mySQL plugin `mysqlbinlog`, the log file can be parsed into readable text. After parsing, we can use MySQL to view the traitor's name which is `Mathew Miller`. 
+
+```
+PS C:\Users\ooiro\Documents\sharedfolder\vishwa> mysqlbinlog -vv DBlog-bin.000007 > vishwa.sql
+```
+
+![image](https://github.com/warlocksmurf/onlinectf-writeups/assets/121353711/6799f310-c29a-4c03-9dbe-dd225bcc80bd)
+
+Now I have to find the name of the outsider. One clue was that the traitor dropped the table after the heist. So I searched for any DROP queries. I found two databases being dropped: `test` and `bank`.
+
+![image](https://github.com/warlocksmurf/onlinectf-writeups/assets/121353711/80cc37cb-14f5-4932-8640-029b42d7519e)
+
+![image](https://github.com/warlocksmurf/onlinectf-writeups/assets/121353711/1464f63a-90a1-4b44-92ba-9440692f14d6)
+
+Then I went to search to find UPDATE queries for `employees` table in the `bank` database. As can be seen from the image, an update was made where the user `John Smith` has been replaced with `John Darwin`. So Darwin is the last name of outsider. We can also see the time at which this update was made.
+
+```
+UPDATE `bank`.`employees`
+```
+
+![image](https://github.com/warlocksmurf/onlinectf-writeups/assets/121353711/95939346-1f24-49b8-84ef-f6a96a456da6)
+
+![image](https://github.com/warlocksmurf/onlinectf-writeups/assets/121353711/35f99506-d10c-42c1-9819-03e092455023)
 
 ## Task 2: Repo Riddles
 Question: We got a suspicious Linkedin post which got a description and also a zip file with it. It is suspected that a message is hidden in there. Can you find it?
