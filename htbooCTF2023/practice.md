@@ -22,7 +22,6 @@ Notice how the script initiates two variables, `nn` and `aa`. These variables co
 
 ![phishing3](https://github.com/warlocksmurf/HTB-writeups/assets/121353711/02f2d840-8370-4073-a19c-d30d0dd6f6a2)
 
-# Solution
 One way is to analyze the `decodeHex` function. By concatenating the two hidden strings in the html file and decoding it with Base64 first and then hex, the flag can be retrieved.
 
 ![phishing4](https://github.com/warlocksmurf/HTB-writeups/assets/121353711/61292495-bd0a-44f2-b61e-28baf9658ece)
