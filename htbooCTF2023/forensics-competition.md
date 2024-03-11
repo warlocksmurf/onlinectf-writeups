@@ -38,7 +38,7 @@ Since we know that the downloable content is encoded in hex and also XOR'ed, we 
 # Task 2: Valhalloween
 Question: As I was walking the neighbor's streets for some Trick-or-Treat, a strange man approached me, saying he was dressed as "The God of Mischief!". He handed me some candy and disappeared. Among the candy bars was a USB in disguise, and when I plugged it into my computer, all my files were corrupted! First, spawn the haunted Docker instance and connect to it! Dig through the horrors that lie in the given Logs and answer whatever questions are asked of you!
 
-Flag: `HTB{}`
+Flag: `HTB{N0n3_c4n_ru1n_th3_H@ll0w33N_Sp1r1t}`
 
 We are given the following file:
 * `Logs`: Directory containing various Windows XML EventLog (.evtx) files
