@@ -26,4 +26,4 @@ Skills:
 * [IrisCTF](https://github.com/warlocksmurf/ctftime-writeups/blob/main/IrisCTF24)
 
 ## 2023
-* [Hack the Boo CTF 2023](https://github.com/warlocksmurf/ctftime-writeups/blob/main/htboo2023)
+* [Hack the Boo CTF 2023](https://github.com/warlocksmurf/ctftime-writeups/blob/main/htbooCTF2023)
