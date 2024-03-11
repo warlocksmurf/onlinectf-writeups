@@ -14,7 +14,7 @@ Skills:
 * Basic Cryptography
 
 ## 2024
-* [Cyber Apocalypse 2024: Hacker Royale](https://github.com/warlocksmurf/ctftime-writeups/blob/main/htbcyber2024)
+* [Cyber Apocalypse 2024: Hacker Royale](https://github.com/warlocksmurf/ctftime-writeups/blob/main/htbcyberCTF2024)
 * [GCCCTF](https://github.com/warlocksmurf/ctftime-writeups/blob/main/GCCCTF24)
 * [osu!gamingCTF](https://github.com/warlocksmurf/ctftime-writeups/blob/main/osu!gamingCTF24)
 * [VishwaCTF](https://github.com/warlocksmurf/ctftime-writeups/blob/main/VishwaCTF24)
