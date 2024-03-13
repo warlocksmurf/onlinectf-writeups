@@ -1,4 +1,4 @@
-# Task 1: Trick or Treat
+## Task 1: Trick or Treat
 Question: Another night staying alone at home during Halloween. But someone wanted to play a Halloween game with me. They emailed me the subject "Trick or Treat" and an attachment. When I opened the file, a black screen appeared for a second on my screen. It wasn't so scary; maybe the season is not so spooky after all.
 
 Flag: `HTB{s4y_Pumpk1111111n!!!}`
@@ -35,7 +35,7 @@ Since we know that the downloable content is encoded in hex and also XOR'ed, we 
 
 ![trick7](https://github.com/warlocksmurf/HTB-writeups/assets/121353711/39636584-ff93-4ac1-a7a2-08ce3a4b2b8b)
 
-# Task 2: Valhalloween
+## Task 2: Valhalloween
 Question: As I was walking the neighbor's streets for some Trick-or-Treat, a strange man approached me, saying he was dressed as "The God of Mischief!". He handed me some candy and disappeared. Among the candy bars was a USB in disguise, and when I plugged it into my computer, all my files were corrupted! First, spawn the haunted Docker instance and connect to it! Dig through the horrors that lie in the given Logs and answer whatever questions are asked of you!
 
 Flag: `HTB{N0n3_c4n_ru1n_th3_H@ll0w33N_Sp1r1t}`
