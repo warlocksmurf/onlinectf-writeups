@@ -1,4 +1,4 @@
-# Task 1: Spooky Phishing
+## Task 1: Spooky Phishing
 Question: A few citizens of the Spooky Country have been victims of a targeted phishing campaign. Inspired by the Halloween spirit, none of them was able to detect attackers trap. Can you analyze the malicious attachment and find the URL for the next attack stage?
 
 Flag: `HTB{sp00ky_ph1sh1ng_w1th_sp00ky_spr34dsh33ts}`
@@ -32,7 +32,7 @@ Another way is to just enter the website as it will redirect us to an error page
 
 ![phishing6](https://github.com/warlocksmurf/HTB-writeups/assets/121353711/9af66095-5825-4d1f-be28-05b5a727cba0)
 
-# Task 2: Bat Problems
+## Task 2: Bat Problems
 Question: On a chilly Halloween night, the town of Hollowville was shrouded in a veil of mystery. The infamous "Haunted Hollow House", known for its supernatural tales, concealed a cryptic document. Whispers in the town suggested that the one who could solve its riddle would reveal a beacon of hope. As an investigator, your mission is to decipher the script's enigmatic sorcery, break the curse, and unveil the flag to become Hollowville's savior.
 
 Flag: `HTB{0bfusc4t3d_b4t_f1l3s_c4n_b3_4_m3ss}`
@@ -60,7 +60,7 @@ By decoding the string, the flag can be retrieved.
 
 ![bat4](https://github.com/warlocksmurf/HTB-writeups/assets/121353711/ff75d596-8d18-4edc-ad2d-925625bd205d)
 
-# Task 3: Vulnerable Season
+## Task 3: Vulnerable Season
 Question: Halloween season is a very busy season for all of us. Especially for web page administrators. Too many Halloween-themed parties to attend, too many plugins to manage. Unfortunately, our admin didn't update the plugins used by our WordPress site and as a result, we got pwned. Can you help us investigate the incident by analyzing the web server logs?
 
 Flag: `HTB{L0g_@n4ly5t_4_bEg1nN3r}`
