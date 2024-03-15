@@ -1468,7 +1468,7 @@ We are given AD1 image file to analyze. Analyzing it via FTK Imager, we can navi
 
 ![image](https://github.com/warlocksmurf/onlinectf-writeups/assets/121353711/962520b3-85a1-41e9-bcf9-1857e118b4f6)
 
-So I went to analyze the event logs using Hayabusa to get an idea of the attacker's motive and method. Filtering by `high` and `critical` levels, we can see the malware being detected by Windows Defender with several alerts.
+So I went to analyze the event logs using Hayabusa to get an idea of the attacker's motive and method. Filtering by `high` and `critical` levels, we can see several malwares being detected by Windows Defender with high and critical alerts. The malwares include mimikatz.exe, fscan64.exe, browser-pw-decrypt.exe and intel.exe.
 
 ![image](https://github.com/warlocksmurf/onlinectf-writeups/assets/121353711/5a845c8b-44c4-4cde-9e0f-01e96cc2355e)
 
